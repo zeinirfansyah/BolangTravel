@@ -1,1 +1,61 @@
 <!-- zein -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../assets/icons/bolang_travel_icon.svg" />
+    <title>BolangTravel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+    <header class="sticky top-0 z-10 shadow">
+        <div class="max-w-7xl mx-auto">
+            <nav class="Navbar lg:flex justify-start gap-20 items-center py-6 mx-4">
+                <ul class="flex items-center justify-between">
+                    <li>
+                        <a id="brand" href="index.html">
+                            <h1 class="text-xl font-bold  transition-all duration-500">
+                                <span class="text-[#00C0E6]">Bolang</span>Travel.
+                            </h1>
+                        </a>
+                    </li>
+                    <button class="sm:hidden hover:bg-white px-3 py-1 transition-all rounded-lg cursor-pointer shadow"
+                        onClick="toggleMenu()" type="button">
+                        <span class="text-xl">&#9776;</span>
+                    </button>
+                </ul>
+                <ul id="menu" class="lg:flex gap-5 hidden transition-all duration-500">
+                    <li class="my-5 lg:my-0">
+                        <a href="index.html" class="hover:text-[#00C0E6] transition-all duration-500">Home</a>
+                    </li>
+                    <li class="my-5 lg:my-0">
+                        <a href="paketWisata.html" class="active hover:text-[#00C0E6] transition-all duration-500">Paket
+                            Wisata</a>
+                    </li>
+                    <li class="my-5 lg:my-0">
+                        <a href="tentangKami.html" class="hover:text-[#00C0E6] transition-all duration-500">Tentang Kami</a>
+                    </li>
+                    <li class="my-5 lg:my-0">
+                        <a href="#footer" class="hover:text-[#00C0E6] transition-all duration-500">Kontak</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main></main>
+    <footer></footer>
+</body>
+
+<script>
+    // burger button menu
+    const toggleMenu = () => {
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("hidden");
+    };
+</script>
+
+</html>
