@@ -8,7 +8,7 @@ The application is designed to facilitate travel bookings, itinerary planning, a
 - [Anugrah Prastyo](https://github.com/anugrahp13)
 - [Ilham Muhammad Raffi](https://github.com/ilhamraffi)
 - Manal Hadi
-- M. Naufan Winggar Rahman
+- M. Naufan Winggar Rahman 
 - Josua Iwanda
 - Muhammad Tariq Akhdal
 
