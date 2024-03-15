@@ -94,91 +94,108 @@
                 Please fill up the blank fields below
               </h2>
             </div>
-            <div
-              class="flex flex-col lg:flex-row gap-5 lg:gap-0 justify-end items-center"
+            <form
+              action="payment.html"
+              class="flex flex-col gap-10 justify-end items-center"
             >
               <div
-                class="info flex flex-col justify-center items-center lg:items-start gap-5 w-full p-4 lg:w-1/2 lg:pe-10 lg:border-r-2 border-[#E5E5E5] "
+                class="flex flex-col lg:flex-row gap-5 lg:gap-0 justify-end items-center"
               >
-                <img
-                  src="../assets/images/1.png"
-                  alt="lombok"
-                  class="rounded-lg lg:rounded-[30px] w-[40rem] h-[17.5rem] object-cover"
-                />
-                <div
-                  class="text-info flex flex-row justify-between items-center w-full"
+                <div id="bookingInfo"
+                  class="info flex flex-col justify-center items-center lg:items-start gap-5 w-full p-4 lg:w-1/2 lg:pe-20 lg:border-r-2 border-[#E5E5E5] "
                 >
-                  <div class="title-info flex flex-col">
-                    <h1 class="text-xl lg:text-2xl">Pantai Gili Trawangan</h1>
-                    <h1 class="text-l lg:text-xl text-[#898989]">
-                      Lombok, Indonesia
-                    </h1>
+                  <img
+                    src="../assets/images/1.png"
+                    alt="lombok"
+                    class="rounded-lg lg:rounded-[30px] w-[40rem] h-[17.5rem] object-cover"
+                  />
+                  <div
+                    class="text-info flex flex-row justify-between items-center w-full"
+                  >
+                    <div class="title-info flex flex-col">
+                      <h1 class="text-xl lg:text-2xl">Pantai Gili Trawangan</h1>
+                      <h1 class="text-l lg:text-xl text-[#898989]">
+                        Lombok, Indonesia
+                      </h1>
+                    </div>
+                    <div class="price-info">
+                      <h1 class="text-xl lg:text-2xl text-[#00C0E6]">
+                        $480 USD
+                      </h1>
+                    </div>
                   </div>
-                  <div class="price-info">
-                    <h1 class="text-xl lg:text-2xl text-[#00C0E6]">$480 USD</h1>
+                </div>
+                <div id="bookingForm" class="w-full lg:w-1/2 lg:ps-20">
+                  <div class="flex flex-col gap-5 lg:w-3/4">
+                    <div class="flex flex-col gap-1">
+                      <label for="name">Full Name</label>
+                      <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="Please enter your full name"
+                        required
+                        aria-required="true"
+                        class="border-none bg-[#F5F6F8] rounded-lg p-4"
+                      />
+                    </div>
+                    <div class="flex flex-col gap-1">
+                      <label for="email">Email</label>
+                      <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="Please enter your email"
+                        required
+                        aria-required="true"
+                        class="border-none bg-[#F5F6F8] rounded-lg p-4"
+                      />
+                    </div>
+                    <div class="flex flex-col gap-1">
+                      <label for="phone">Phone Number</label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        id="phone"
+                        placeholder="Please enter your phone"
+                        required
+                        aria-required="true"
+                        class="border-none bg-[#F5F6F8] rounded-lg p-4"
+                      />
+                    </div>
+                    <div class="flex flex-col gap-2">
+                      <label for="address">Address</label>
+                      <textarea
+                        name="address"
+                        id="address"
+                        placeholder="Please enter your address"
+                        required
+                        aria-required="true"
+                        class="border-none bg-[#F5F6F8] rounded-lg p-4 resize-none"
+                        rows="2"
+                        cols="30"
+                      ></textarea>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="form w-full lg:w-1/2 lg:ps-10">
-                <form action="" class="flex flex-col gap-5 lg:w-3/4">
-                  <div class="flex flex-col gap-1">
-                    <label for="name">Full Name</label>
-                    <input
-                      type="text"
-                      name="name"
-                      id="name"
-                      placeholder="Please enter your full name"
-                      class="border-none bg-[#F5F6F8] rounded-lg p-4"
-                    />
-                  </div>
-                  <div class="flex flex-col gap-1">
-                    <label for="email">Email</label>
-                    <input
-                      type="email"
-                      name="email"
-                      id="email"
-                      placeholder="Please enter your email"
-                      class="border-none bg-[#F5F6F8] rounded-lg p-4"
-                    />
-                  </div>
-                  <div class="flex flex-col gap-1">
-                    <label for="phone">Phone Number</label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      id="phone"
-                      placeholder="Please enter your phone"
-                      class="border-none bg-[#F5F6F8] rounded-lg p-4"
-                    />
-                  </div>
-                  <div class="flex flex-col gap-2">
-                    <label for="address">Address</label>
-                    <textarea
-                      name="address"
-                      id="address"
-                      placeholder="Please enter your phone"
-                      class="border-none bg-[#F5F6F8] rounded-lg p-4 resize-none"
-                      rows="2"
-                      cols="30"
-                    ></textarea>
-                  </div>
-                </form>
+              <div
+                class="flex flex-col justify-center items-center gap-3 w-full lg:w-auto"
+              >
+                <button
+                  id="submit"
+                  type="submit"
+                  class="button bg-[#02CFEA] text-[#fff] px-6 py-2 rounded w-full text-center font-semibold transition-all duration-500 hover:bg-[#00D4FF] hover:text-[#fff] hover:border-[#02CFEA] border-2 border-[#00D4FF]"
+                >
+                  Continue to Payment
+                </button>
+                <a
+                  href="PackageDetail.html"
+                  class="button bg-[#fff] text-[#FF498B] px-6 py-2 rounded w-full text-center font-semibold transition-all duration-500 hover:bg-[#FF498B] hover:text-[#fff] hover:border-[#FF498B] border-2 border-[#FF498B]"
+                  >Cancel</a
+                >
               </div>
-            </div>
-            <div
-              class="flex flex-col justify-center items-center gap-3 w-full lg:w-auto"
-            >
-              <a
-                href="pembayaran.html"
-                class="button bg-[#02CFEA] text-[#fff] px-4 py-2 rounded w-full text-center font-semibold transition-all duration-500 hover:bg-[#00D4FF] hover:text-[#fff] hover:border-[#02CFEA] border-2 border-[#00D4FF]"
-                >Continue to Payment</a
-              >
-              <a
-                href="PackageDetail.html"
-                class="button bg-[#fff] text-[#FF498B] px-4 py-2 rounded w-full text-center font-semibold transition-all duration-500 hover:bg-[#FF498B] hover:text-[#fff] hover:border-[#FF498B] border-2 border-[#FF498B]"
-                >Cancel</a
-              >
-            </div>
+            </form>
           </div>
         </div>
       </section>
