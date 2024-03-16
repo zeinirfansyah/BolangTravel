@@ -1,1 +1,276 @@
 <!-- zein -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../assets/icons/bolang_travel_icon.svg" />
+    <title>BolangTravel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!-- animate on scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  </head>
+
+  <body>
+    <header class="sticky top-0 z-10 bg-white shadow">
+      <div class="max-w-7xl mx-auto">
+        <nav class="Navbar md:flex justify-start gap-20 items-center py-6 mx-4">
+          <ul class="flex items-center justify-between">
+            <li>
+              <a id="brand" href="index.html">
+                <h1 class="text-xl font-semibold  transition-all duration-500">
+                  <span class="text-[#00C0E6]">Bolang</span>Travel.
+                </h1>
+              </a>
+            </li>
+            <button
+              class="sm:hidden hover:bg-white px-3 py-1 transition-all rounded-lg cursor-pointer shadow"
+              onClick="toggleMenu()"
+              type="button"
+            >
+              <span class="text-xl">&#9776;</span>
+            </button>
+          </ul>
+          <ul
+            id="menu"
+            class="md:flex gap-5 hidden transition-all duration-500"
+          >
+            <li class="my-5 md:my-0">
+              <a
+                href="index.html"
+                class="hover:text-[#00C0E6] transition-all duration-500"
+                >Home</a
+              >
+            </li>
+            <li class="my-5 md:my-0">
+              <a
+                href="TravelPackages.html"
+                class="active hover:text-[#00C0E6] transition-all duration-500"
+                >Paket Wisata</a
+              >
+            </li>
+            <li class="my-5 md:my-0">
+              <a
+                href="about.html"
+                class="hover:text-[#00C0E6] transition-all duration-500"
+                >Tentang Kami</a
+              >
+            </li>
+            <li class="my-5 md:my-0">
+              <a
+                href="#footer"
+                class="hover:text-[#00C0E6] transition-all duration-500"
+                >Kontak</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section
+        data-aos="zoom-out"
+        id="hero"
+        class="bg-[#fff] transition-all duration-500 py-7"
+      >
+        <div class="max-w-7xl mx-auto">
+          <div class="flex flex-col gap-5 lg:gap-10 items-center px-6">
+            <div class="title flex flex-col justify-center items-center gap-2">
+              <div class="flex flex-row gap-10 mb-4 mt-7">
+                <span
+                  class="bg-[#00C0E6] text-xl lg:text-3xl text-[#fff] rounded-xl px-4 py-1 transition-all duration-500"
+                  >1</span
+                >
+                <span
+                  class="bg-[#E5E5E5] text-xl lg:text-3xl text-[#898989] rounded-xl px-4 py-1 outline outline-[#E5E5E5] outline-2 outline-offset-4 transition-all duration-500 "
+                  >2</span
+                >
+              </div>
+              <h1 class="text-2xl lg:text-3xl font-bold text-center">
+                Payment
+              </h1>
+              <h2 class="text-l lg:text-xl text-center text-[#B0B0B0]">
+                Please fill up the blank fields below
+              </h2>
+            </div>
+            <form
+              action="completedCheckout.html"
+              class="flex flex-col gap-10 justify-end items-center"
+            >
+              <div
+                class="flex flex-col lg:flex-row gap-10 lg:gap-0 justify-end items-center"
+              >
+                <div
+                  id="paymentInfo"
+                  class="flex flex-col gap-5 w-full lg:pe-20 pb-10 lg:pb-auto border-b-2 lg:border-b-0 lg:border-r-2 border-[#E5E5E5] "
+                >
+                  <h1 class="text-xl lg:text-2xl">Payment Information</h1>
+                  <ul class="flex flex-col gap-2">
+                    <li>Travel Package : Blue Origin Fams</li>
+                    <li>Price : $480 USD</li>
+                    <li>Tax : 11%</li>
+                    <li>Total : $510 USD</li>
+                  </ul>
+                  <div
+                    class="bank-card px-4 py-4 shadow flex flex-row gap-4 justify-between items-center"
+                  >
+                    <img
+                      src="../assets/icons/bca_bank.png"
+                      alt="bank_bca"
+                      srcset=""
+                    />
+                    <div>
+                      <p>Bank Central Asia</p>
+                      <p>2208 4666</p>
+                      <p>PT. Bolang Travel Indonesia</p>
+                    </div>
+                  </div>
+                  <div
+                    class="bank-card px-4 py-4 shadow flex flex-row gap-4 justify-between items-center"
+                  >
+                    <img
+                      src="../assets/icons/mandiri_bank.png"
+                      alt="bank_bca"
+                      srcset=""
+                    />
+                    <div>
+                      <p>Bank Mandiri</p>
+                      <p>7884 4666</p>
+                      <p>PT. Bolang Travel Indonesia</p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  id="paymentForm"
+                  class="flex flex-col gap-5 w-full lg:ps-20"
+                >
+                  <div class="flex flex-col gap-1">
+                    <label for="name">Nama Pengirim</label>
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      placeholder="Please enter your full name"
+                      required
+                      aria-required="true"
+                      class="border-none bg-[#F5F6F8] rounded-lg p-4"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <label for="bank_name">Nama Bank</label>
+                    <input
+                      type="text"
+                      name="bank_name"
+                      id="bank_name"
+                      placeholder="Please enter your bank name"
+                      required
+                      aria-required="true"
+                      class="border-none bg-[#F5F6F8] rounded-lg p-4"
+                    />
+                  </div>
+
+                  <div class="flex flex-col gap-1">
+                    <label for="transfer_receipt"
+                      >Upload Transfer Receipt</label
+                    >
+                    <input
+                      type="file"
+                      name="transfer_receipt"
+                      id="transfer_receipt"
+                      required
+                      aria-required="true"
+                      allowed=".jpg, .jpeg, .png"
+                      class="border-none bg-[#F5F6F8] rounded-lg p-4"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex flex-col justify-center items-center gap-3 w-full lg:w-1/4"
+              >
+                <button
+                  id="submit"
+                  type="submit"
+                  class="button bg-[#02CFEA] text-[#fff] px-6 py-2 rounded w-full text-center font-semibold transition-all duration-500 hover:bg-[#00D4FF] hover:text-[#fff] hover:border-[#02CFEA] border-2 border-[#00D4FF]"
+                >
+                  Submit
+                </button>
+                <a
+                  href="bookingInformation.html"
+                  class="button bg-[#fff] text-[#FF498B] px-6 py-2 rounded w-full text-center font-semibold transition-all duration-500 hover:bg-[#FF498B] hover:text-[#fff] hover:border-[#FF498B] border-2 border-[#FF498B]"
+                  >Cancel</a
+                >
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer" class=" bg-[#fff] border-t-2 border-[#E5E5E5]">
+      <div class="max-w-7xl mx-auto px-4">
+        <div
+          class="flex flex-col justify-center items-center gap-2 text-center py-3 py-7"
+        >
+          <div id="footer-title">
+            <h1 class="text-xl font-semibold">
+              <span class="text-[#00C0E6]">Bolang</span>Travel.
+            </h1>
+          </div>
+          <ul id="footer-contact" class="flex flex-col gap-2">
+            <li class="text-[#B0B0B0]">
+              <a
+                href=""
+                target="_blank"
+                class="hover:text-[#00C0E6] transition-all duration-500"
+                >support@bolangtravel.id</a
+              >
+            </li>
+            <li class="text-[#B0B0B0]">
+              <a
+                href=""
+                target="_blank"
+                class="hover:text-[#00C0E6] transition-all duration-500"
+                >620 1234 5678</a
+              >
+            </li>
+            <li class="text-[#B0B0B0]">
+              © 2024 All rights reserved - BolangTravel
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+  <script>
+
+    // animate on scroll
+    AOS.init({
+        duration: 1000
+    });
+
+    // burger button menu
+    const toggleMenu = () => {
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("hidden");
+    };
+
+     // Smooth scroll behavior when clicking on navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          const targetElement = document.querySelector(this.getAttribute('href'));
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+  </script>
+</html>
