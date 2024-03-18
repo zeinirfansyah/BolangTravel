@@ -1,1 +1,202 @@
-<!-- bang manal hadi -->
+<!-- zein -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../assets/icons/bolang_travel_icon.svg" />
+    <title>BolangTravel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!-- animate on scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  </head>
+
+  <body>
+    <header class="sticky top-0 z-10 bg-white shadow">
+      <div class="max-w-7xl mx-auto">
+        <nav class="Navbar md:flex justify-start gap-20 items-center py-6 mx-4">
+          <ul class="flex items-center justify-between">
+            <li>
+              <a id="brand" href="index.html">
+                <h1 class="text-xl font-semibold  transition-all duration-500">
+                  <span class="text-[#00C0E6]">Bolang</span>Travel.
+                </h1>
+              </a>
+            </li>
+            <button
+              class="sm:hidden hover:bg-white px-3 py-1 transition-all rounded-lg cursor-pointer shadow"
+              onClick="toggleMenu()"
+              type="button"
+            >
+              <span class="text-xl">&#9776;</span>
+            </button>
+          </ul>
+          <ul
+            id="menu"
+            class="md:flex gap-5 hidden transition-all duration-500"
+          >
+            <li class="my-5 md:my-0">
+              <a
+                href="index.html"
+                class="hover:text-[#00C0E6] transition-all duration-500"
+                >Home</a
+              >
+            </li>
+            <li class="my-5 md:my-0">
+              <a
+                href="TravelPackages.html"
+                class="hover:text-[#00C0E6] transition-all duration-500"
+                >Paket Wisata</a
+              >
+            </li>
+            <li class="my-5 md:my-0">
+              <a
+                href="about.html"
+                class="active hover:text-[#00C0E6] transition-all duration-500"
+                >Tentang Kami</a
+              >
+            </li>
+            <li class="my-5 md:my-0">
+              <a
+                href="#footer"
+                class="hover:text-[#00C0E6] transition-all duration-500"
+                >Kontak</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section
+        data-aos="zoom-out"
+        id="about"
+        class="bg-[#fff] transition-all duration-500 py-20"
+      >
+        <div class="max-w-7xl mx-auto">
+          <div
+            class="flex flex-col lg:flex-row justify-between items-center gap-10 px-4"
+          >
+            <div
+              id="foto"
+              class="lg:w-1/3 flex justify-center items-center lg:my-7"
+            >
+              <img
+                src="../assets/images/14.png"
+                alt="Zein Irfansyah"
+                class="transition duration-500 w-[320px] h-[420px] object-cover rounded-2xl lg:rounded-br-[100px] shadow outline-dashed outline-[#B0B0B0] outline-2 outline-offset-8"
+              />
+            </div>
+            <div id="about" class="flex flex-col gap-4  lg:w-2/3">
+              <h1 class="text-2xl lg:text-3xl font-bold">
+                <span class="text-[#00C0E6]">Bolang</span>Travel.
+              </h1>
+              <p class="text-[#B0B0B0]">
+                Discover the world with BolangTravel, your premier destination
+                for unparalleled adventures. From relaxing beach getaways to
+                thrilling mountain expeditions, we specialize in creating
+                bespoke travel experiences tailored to your preferences. With
+                our dedicated team of experts and attention to detail, every
+                aspect of your journey is meticulously planned, leaving you free
+                to immerse yourself in the wonders of exploration.
+              </p>
+              <p class="text-[#B0B0B0]">
+                At BolangTravel, we tailor every trip to your unique desires,
+                offering cultural immersion, thrilling activities, or tranquil
+                escapes. Let us be your trusted partner in crafting
+                unforgettable journeys that inspire and delight
+              </p>
+              <hr class="border-[#E5E5E5] w-full md:w-1/2 my-2" />
+              <div id="contact" class="flex flex-col">
+                <a
+                  href="#"
+                  target="_blank"
+                  class="text-[#B0B0B0] hover:text-[#00C0E6] transition-all duration-500 flex gap-2"
+                  ><img src="../assets/icons/icons8-whatsapp.svg" alt="whatsapp"
+                />+620 1234 5678</a>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  class="text-[#B0B0B0] hover:text-[#00C0E6] transition-all duration-500 flex gap-2"
+                  ><img src="../assets/icons/icons8-instagram.svg" alt="whatsapp"
+                />bolangtravel</a>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  class="text-[#B0B0B0] hover:text-[#00C0E6] transition-all duration-500 flex gap-2"
+                  ><img src="../assets/icons/icons8-google-maps-old.svg" alt="whatsapp"
+                />Jl.Ringroad Utara, Sleman, D.I. Yogyakarta</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer" class=" bg-[#fff] border-t-2 border-[#E5E5E5]">
+      <div class="max-w-7xl mx-auto px-4">
+        <div
+          class="flex flex-col justify-center items-center gap-2 text-center py-3 py-7"
+        >
+          <div id="footer-title">
+            <h1 class="text-xl font-semibold">
+              <span class="text-[#00C0E6]">Bolang</span>Travel.
+            </h1>
+          </div>
+          <ul id="footer-contact" class="flex flex-col gap-2">
+            <li class="text-[#B0B0B0]">
+              <a
+                href=""
+                target="_blank"
+                class="hover:text-[#00C0E6] transition-all duration-500"
+                >support@bolangtravel.id</a
+              >
+            </li>
+            <li class="text-[#B0B0B0]">
+              <a
+                href=""
+                target="_blank"
+                class="hover:text-[#00C0E6] transition-all duration-500"
+                >620 1234 5678</a
+              >
+            </li>
+            <li class="text-[#B0B0B0]">
+              © 2024 All rights reserved - BolangTravel
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+  <script>
+
+    // animate on scroll
+    AOS.init({
+        duration: 1000
+    });
+
+    // burger button menu
+    const toggleMenu = () => {
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("hidden");
+    };
+
+     // Smooth scroll behavior when clicking on navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          const targetElement = document.querySelector(this.getAttribute('href'));
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+  </script>
+</html>
