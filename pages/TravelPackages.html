@@ -1,1 +1,73 @@
 <!-- Mbak Farah, Bang Naufan, Bang Akhdal -->
+<!-- Farah -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../assets/icons/bolang_travel_icon.svg" />
+    <title>BolangTravel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <!-- animate on scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  </head>
+
+  <body>
+    <header class="sticky top-0 z-10 bg-white shadow">
+      <div class="max-w-7xl mx-auto">
+        <nav class="Navbar md:flex justify-start gap-20 items-center py-6 mx-4">
+          <ul class="flex items-center justify-between">
+            <li>
+              <a id="brand" href="index.html">
+                <h1 class="text-xl font-semibold  transition-all duration-500">
+                  <span class="text-[#00C0E6]">Bolang</span>Travel.
+                </h1>
+              </a>
+            </li>
+            <button
+              class="sm:hidden hover:bg-white px-3 py-1 transition-all rounded-lg cursor-pointer shadow"
+              onClick="toggleMenu()"
+              type="button"
+            >
+              <span class="text-xl">&#9776;</span>
+            </button>
+          </ul>
+          <ul
+            id="menu"
+            class="md:flex gap-5 hidden transition-all duration-500"
+          >
+            <li class="my-5 md:my-0">
+              <a
+                href="index.html"
+                class="hover:text-[#00C0E6] transition-all duration-500"
+                >Home</a
+              >
+            </li>
+            <li class="my-5 md:my-0">
+              <a
+                href="TravelPackages.html"
+                class="active hover:text-[#00C0E6] transition-all duration-500"
+                >Paket Wisata</a
+              >
+            </li>
+            <li class="my-5 md:my-0">
+              <a
+                href="about.html"
+                class="hover:text-[#00C0E6] transition-all duration-500"
+                >Tentang Kami</a
+              >
+            </li>
+            <li class="my-5 md:my-0">
+              <a
+                href="#footer"
+                class="hover:text-[#00C0E6] transition-all duration-500"
+                >Kontak</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
