@@ -163,6 +163,27 @@
     </div>
     <script>
       AOS.init({duration:1000});
+      
+        // burger button menu
+    const toggleMenu = () => {
+        const menu = document.getElementById("menu");
+        menu.classList.toggle("hidden");
+    };
+
+     // Smooth scroll behavior when clicking on navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          const targetElement = document.querySelector(this.getAttribute('href'));
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
     </script>
 </body>
 </html>
