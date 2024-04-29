@@ -17,8 +17,8 @@ function App() {
           <Route path="/paket-wisata" element={<TravelPackage />} />
           <Route path="/detail-paket/:id" element={<TravelPackage />} />
           <Route path="/booking-progres" element={<BookingProgress />} />
-          <Route path="/payment" element={<Payment />} />
-          <Route path="/completed" element={<Completed />} />
+          <Route path="/pembayaran" element={<Payment />} />
+          <Route path="/booking-selesai" element={<Completed />} />
         </Routes>
       </Layout>
     </>
