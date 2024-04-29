@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
-import { Header } from '../components/Header'
-import { Footer } from '../components/Footer'
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
-export const Layout = ({children}) => {
+export const Layout = ({ children }) => {
   return (
-   <>
-    <Header />
-    {children}
-    <Footer />
-   </>
-  )
-}
+    <>
+      <Header />
+      {children}
+      <Footer />
+    </>
+  );
+};
