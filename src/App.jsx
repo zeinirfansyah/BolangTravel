@@ -11,10 +11,10 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/travel-package" element={<TravelPackage />} />
-          <Route path="/package-detail/:id" element={<TravelPackage />} />
-          <Route path="/booking-progress" element={<BookingProgress />} />
+          <Route path="/tentang-kami" element={<About />} />
+          <Route path="/paket-wisata" element={<TravelPackage />} />
+          <Route path="/detail-paket/:id" element={<TravelPackage />} />
+          <Route path="/booking-progres" element={<BookingProgress />} />
         </Routes>
       </Layout>
     </>
