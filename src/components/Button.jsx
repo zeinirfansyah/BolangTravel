@@ -1,5 +1,6 @@
-export const Button = () => {
-    // Farah
+import PropTypes from 'prop-types';
+
+export const Button = ({ style, onClick, nama }) => {
   return (
     <button
       id="submit"
@@ -10,3 +11,9 @@ export const Button = () => {
     </button>
   );
 };
+
+Button.propTypes = {
+  style: PropTypes.string,
+  onClick: PropTypes.func,
+  nama: PropTypes.string,
+}
