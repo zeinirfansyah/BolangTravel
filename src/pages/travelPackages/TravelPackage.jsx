@@ -10,7 +10,7 @@ export const TravelPackage = () => {
 
   useEffect(() => {
     store.fetchProducts();
-  }, []);
+  }, [store]);
 
   return (
     <>
