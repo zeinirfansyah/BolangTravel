@@ -45,6 +45,13 @@ const data = [
           "Saksikan matahari terbenam yang spektakuler di Pura Tanah Lot, salah satu tempat paling terkenal di Bali. Bangunan pura yang megah terletak di atas batu karang di tepi laut.",
         destination_image: image4,
       },
+      {
+        id: 4,
+        destination_name: "Pulau Seribu",
+        destination_description:
+          "Nikmati keindahan pulau seribu dengan berbagai aktivitas menarik seperti snorkeling, diving, dan berjemur di pantai pasir putihnya.",
+        destination_image: image11,
+      },
     ],
     rundown: [
       {
