@@ -1,13 +1,11 @@
 import LinesEllipsis from "react-lines-ellipsis";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const Destination = ({ destination }) => {
   return (
     <>
-      <Link
+      <div
         key={destination.id}
-        to={`/paket-wisata/${destination.id}`}
         className="min-h-[240px] my-3"
       >
         <picture>
@@ -28,7 +26,7 @@ const Destination = ({ destination }) => {
             className="text-dark font-medium text-lg lg:text-base "
           />
         </div>
-      </Link>
+      </div>
     </>
   );
 };
