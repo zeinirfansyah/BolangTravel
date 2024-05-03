@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import data from "../data/data.json";
+import data from "../data/data.js";
 
 const initialState = {
   isLoading: true,

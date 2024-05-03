@@ -29,21 +29,21 @@ const data = [
         destination_name: "Pantai Kuta",
         destination_description:
           "Nikmati keindahan Pantai Kuta yang terkenal dengan pasir putihnya dan ombaknya yang cocok untuk berselancar. Tersedia berbagai aktivitas menyenangkan untuk dinikmati bersama keluarga.",
-        image_url: image1,
+        destination_image: image2,
       },
       {
         id: 2,
         destination_name: "Ubud",
         destination_description:
           "Jelajahi kehidupan pedesaan di Ubud dan nikmati suasana tenang di antara sawah hijau. Kunjungi Monkey Forest dan berbelanja di pasar tradisional untuk mendapatkan oleh-oleh khas Bali.",
-        image_url: image1,
+        destination_image: image1,
       },
       {
         id: 3,
         destination_name: "Tanah Lot",
         destination_description:
           "Saksikan matahari terbenam yang spektakuler di Pura Tanah Lot, salah satu tempat paling terkenal di Bali. Bangunan pura yang megah terletak di atas batu karang di tepi laut.",
-        image_url: image1,
+        destination_image: image4,
       },
     ],
     rundown: [
@@ -83,21 +83,21 @@ const data = [
         destination_name: "Sungai Ayung",
         destination_description:
           "Rasakan sensasi arung jeram di Sungai Ayung yang menawarkan rute yang menantang dan pemandangan alam yang menakjubkan. Aktivitas ini cocok untuk dinikmati bersama keluarga.",
-        image_url: image2,
+        destination_image: image2,
       },
       {
         id: 2,
         destination_name: "Pulau Menjangan",
         destination_description:
           "Nikmati keindahan bawah laut di Pulau Menjangan dengan snorkeling. Anda akan bertemu dengan berbagai jenis biota laut yang memukau dan terumbu karang yang indah.",
-        image_url: image2,
+        destination_image: image2,
       },
       {
         id: 3,
         destination_name: "Gunung Batur",
         destination_description:
           "Trekking di Gunung Batur akan memberikan pengalaman petualangan yang tak terlupakan. Nikmati pemandangan matahari terbit yang menakjubkan dari puncak gunung.",
-        image_url: image2,
+        destination_image: image2,
       },
     ],
     rundown: [
@@ -137,21 +137,21 @@ const data = [
         destination_name: "Pantai Seminyak",
         destination_description:
           "Santai dan nikmati suasana pantai di Pantai Seminyak yang terkenal dengan bar, restoran, dan klub malamnya. Tersedia berbagai aktivitas menyenangkan untuk dinikmati bersama keluarga.",
-        image_url: image3,
+        destination_image: image3,
       },
       {
         id: 2,
         destination_name: "Ubud",
         destination_description:
           "Menyegarkan pikiran dan tubuh dengan pijat tradisional Bali di Ubud. Rasakan sensasi relaksasi yang mendalam di tengah-tengah alam yang indah.",
-        image_url: image3,
+        destination_image: image3,
       },
       {
         id: 3,
         destination_name: "Tegalalang Rice Terrace",
         destination_description:
           "Nikmati pemandangan sawah terasering yang indah di Tegalalang Rice Terrace. Cocok untuk berfoto-foto dan bersantai menikmati suasana pedesaan.",
-        image_url: image3,
+        destination_image: image3,
       },
     ],
     rundown: [
@@ -191,21 +191,21 @@ const data = [
         destination_name: "Desa Penglipuran",
         destination_description:
           "Jelajahi kehidupan desa tradisional Bali di Desa Penglipuran. Anda dapat melihat arsitektur tradisional Bali dan berinteraksi dengan penduduk setempat.",
-        image_url: image4,
+        destination_image: image4,
       },
       {
         id: 2,
         destination_name: "Pura Besakih",
         destination_description:
           "Kunjungi Pura Besakih, pura terbesar dan tertua di Bali. Anda dapat mengikuti upacara keagamaan dan mengagumi arsitektur dan ornamen yang indah.",
-        image_url: image4,
+        destination_image: image4,
       },
       {
         id: 3,
         destination_name: "Kuliner Khas Bali",
         destination_description:
           "Nikmati beragam hidangan khas Bali yang autentik, mulai dari babi guling hingga lawar. Anda akan merasakan kekayaan cita rasa Bali yang unik.",
-        image_url: image4,
+        destination_image: image4,
       },
     ],
     rundown: [
@@ -245,21 +245,21 @@ const data = [
         destination_name: "Air Terjun Tegenungan",
         destination_description:
           "Nikmati keindahan Air Terjun Tegenungan, salah satu air terjun paling indah di Bali. Anda dapat berenang di kolam alami di bawah air terjun atau bersantai di sekitar area yang teduh.",
-        image_url: image5,
+        destination_image: image5,
       },
       {
         id: 2,
         destination_name: "Taman Burung Bali",
         destination_description:
           "Kunjungi Taman Burung Bali dan lihat berbagai spesies burung yang eksotis dan langka. Anda dapat menyaksikan pertunjukan burung dan berinteraksi dengan burung-burung tersebut.",
-        image_url: image5,
+        destination_image: image5,
       },
       {
         id: 3,
         destination_name: "Baturiti Village",
         destination_description:
           "Jelajahi pedalaman Bali dengan bersepeda di sekitar desa Baturiti. Anda akan melewati hamparan sawah hijau, hutan tropis, dan desa-desa tradisional Bali yang indah.",
-        image_url: image5,
+        destination_image: image5,
       },
     ],
     rundown: [
@@ -299,21 +299,21 @@ const data = [
         destination_name: "Ubud",
         destination_description:
           "Immerse yourself in the tranquil ambiance of Ubud, the heart of Bali's wellness scene. Participate in daily yoga sessions, meditation, and mindfulness practices.",
-        image_url:image6,
+        destination_image:image6,
       },
       {
         id: 2,
         destination_name: "Spa & Wellness Centers",
         destination_description:
           "Indulge in rejuvenating spa treatments and holistic wellness therapies at renowned wellness centers in Ubud. Restore your balance and vitality.",
-        image_url:image6,
+        destination_image:image6,
       },
       {
         id: 3,
         destination_name: "Organic Cuisine",
         destination_description:
           "Nourish your body with wholesome and nutritious organic cuisine prepared by expert chefs. Enjoy farm-to-table dining experiences amidst lush green surroundings.",
-        image_url:image6,
+        destination_image:image6,
       },
     ],
     rundown: [
