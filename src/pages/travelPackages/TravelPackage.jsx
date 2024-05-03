@@ -31,7 +31,6 @@ export const TravelPackage = () => {
                 <FeaturedProduct
                   key={product.id}
                   product={product}
-                  onProductDetails={() => store.ProductDetails(product)}
                 />
               ))}
             </div>
@@ -46,7 +45,6 @@ export const TravelPackage = () => {
               <Product
                 key={product.id}
                 product={product}
-                onProductDetails={() => store.ProductDetails(product)}
               />
             ))}
           </div>
