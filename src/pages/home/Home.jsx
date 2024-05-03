@@ -25,7 +25,7 @@ export const Home = () => {
         style={{ backgroundImage: `url(${image11})` }}
       >
         <div className="overflow-hidden bg-[#000] bg-opacity-70 ">
-          <div className="max-w-7xl mx-auto px-4 h-[95vh] lg:h-[90vh] p-4 flex items-center justify-center">
+          <div className="max-w-7xl mx-auto px-4 h-[95vh] lg:h-[45rem] p-4 flex items-center justify-center">
             <div className="flex flex-col gap-4 max-w-3xl">
               <h1 className="text-2xl lg:text-4xl mt-10 font-bold text-center text-white">
                 Temukan Keajaiban Indonesia, Eksplorasi Tanah Air Terindah!
@@ -61,12 +61,12 @@ export const Home = () => {
               ))}
             </div>
           </div>
-          <div className="flex flex-row gap-14 items-center">
+          <div className="flex flex-row justify-center gap-14 items-center py-14">
             <div className="w-1/4">
               <img
                 src={image14}
                 alt="image14"
-                className="outline-dashed outline-darkGray outline-offset-8 rounded-br-[150px] rounded-lg"
+                className="outline-dashed outline-2 outline-darkGray outline-offset-8 rounded-br-[150px] rounded-lg max-h-[480px]"
               />
             </div>
             <div className="flex flex-col gap-7 w-1/2">
