@@ -33,7 +33,7 @@ export const BookingProgress = () => {
     };
 
     setBookingData(updatedBookingData);
-    navigate(`/pembayaran`); // Navigate to payment page
+    navigate(`/pembayaran`); 
   };
 
   const handleCancel = () => {

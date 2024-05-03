@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 export const Payment = () => {
   const store = useStore();
-  const { bookingData, checkoutData, setCheckoutData } = store;
+  const { bookingData, setBookingData, checkoutData, setCheckoutData } = store;
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -38,6 +38,8 @@ export const Payment = () => {
     };
 
     setCheckoutData(updateCheckoutData);
+    setBookingData([]);
+    setCheckoutData([]);
     navigate(`/booking-selesai`); // Navigate to payment page
   };
 
