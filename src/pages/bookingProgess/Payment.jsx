@@ -1,7 +1,7 @@
 import bca_icon from "../../assets/icons/bca_bank.png";
 import mandiri_icon from "../../assets/icons/mandiri_bank.png";
-import { Button } from "../../components/Button";
-import { Input } from "../../components/Input";
+import { Button } from "../../components/ui/Button";
+import { Input } from "../../components/ui/Input";
 
 export const Payment = () => {
   return (
