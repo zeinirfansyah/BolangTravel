@@ -1,14 +1,15 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useStore from "../../store/store";
 import Destination from "../../components/Destination";
+import { Button } from "../../components/ui/Button";
 
 export const PackageDetail = () => {
   const { id } = useParams();
   const store = useStore();
   const product = store.products.find((product) => product.id == id);
 
-  console.log(id);
-  console.log(product);
+  const navigate = useNavigate();
+  
   return (
     <>
       <div className="max-w-7xl mx-auto px-4 py-7">
@@ -76,13 +77,7 @@ export const PackageDetail = () => {
                       className="border-2 border-navy shadow p-3 rounded-xl"
                       placeholder="Select date"
                     />
-                    <button
-                      id="submit"
-                      type="submit"
-                      className="button bg-[#02CFEA] text-[#fff] px-6 py-2 rounded w-full text-center font-semibold transition-all duration-500 hover:bg-[#00D4FF] hover:text-[#fff] hover:border-[#02CFEA] border-2 border-[#00D4FF]"
-                    >
-                      Continue to Book
-                    </button>
+                    <Button style="bg-secondary hover:bg-primary text-white" onClick={() => {navigate(`/booking-progres`)}} title="Book Now" />
                   </form>
                 </div>
               </div>
