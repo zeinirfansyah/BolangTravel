@@ -2,6 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import useStore from "../../store/store";
 import Destination from "../../components/Destination";
 import { Button } from "../../components/ui/Button";
+import { useState } from "react";
 
 export const PackageDetail = () => {
   const { id } = useParams();
@@ -9,13 +10,38 @@ export const PackageDetail = () => {
   const product = store.products.find((product) => product.id == id);
 
   const navigate = useNavigate();
-  
+
+  const [selectedDate, setSelectedDate] = useState("");
+
+  const handleBooking = () => {
+    if (!selectedDate) {
+      alert("Please select a date before booking.");
+      return;
+    }
+
+    const bookingData = {
+      productId: product.id,
+      title: product.title,
+      product_image: product.product_image,
+      tour_location: product.tour_location,
+      tour_duration: product.tour_duration,
+      price: product.price,
+      date: selectedDate,
+    };
+
+    store.setBookingData(bookingData); 
+
+    navigate(`/booking-progres`); 
+  };
+
   return (
     <>
       <div className="max-w-7xl mx-auto px-4 py-7">
         <div className="flex flex-col gap-4">
           <div className="flex flex-col  gap-3 max-w-5xl mx-auto px-4 py-12">
-            <h1 className="text-3xl lg:text-4xl font-bold text-center">{product.title}</h1>
+            <h1 className="text-3xl lg:text-4xl font-bold text-center">
+              {product.title}
+            </h1>
             <h1 className="text-l lg:text-xl text-center text-textGray">
               {product.description}
             </h1>
@@ -67,8 +93,7 @@ export const PackageDetail = () => {
                   <h1 className="font-semibold text-xl text-secondary">
                     {product.price}
                   </h1>
-                  <form
-                    action="bookingInformation.html"
+                  <div
                     className="w-full mt-4 grid gap-2"
                   >
                     <input
@@ -76,9 +101,14 @@ export const PackageDetail = () => {
                       required
                       className="border-2 border-navy shadow p-3 rounded-xl"
                       placeholder="Select date"
+                      onChange={(e) => setSelectedDate(e.target.value)}
                     />
-                    <Button style="bg-secondary hover:bg-primary text-white" onClick={() => {navigate(`/booking-progres`)}} title="Book Now" />
-                  </form>
+                    <Button
+                      style="bg-secondary hover:bg-primary text-white"
+                      onClick={handleBooking}
+                      title="Book Now"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
