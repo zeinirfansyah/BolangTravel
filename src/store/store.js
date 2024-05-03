@@ -1,5 +1,4 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
 import data from "../data/data.json";
 
 const initialState = {
@@ -8,32 +7,24 @@ const initialState = {
   product: [],
 };
 
-const useStore = create(
-  persist(
-    (set) => ({
-      ...initialState,
+const useStore = create((set) => ({
+  ...initialState,
 
-      fetchProducts: async () => {
-        try {
-          await new Promise((resolve) => setTimeout(resolve, 1000));
-          set({
-            isLoading: false,
-            products: data,
-          });
-        } catch (error) {
-          console.error("Error fetching products:", error);
-        }
-      },
-
-      ProductDetails: (p) => {
-        set({ Product: p });
-      },
-    }),
-    {
-      name: "bolangTravelStore",
-      getStorage: () => localStorage,
+  fetchProducts: async () => {
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      set({
+        isLoading: false,
+        products: data,
+      });
+    } catch (error) {
+      console.error("Error fetching products:", error);
     }
-  )
-);
+  },
+
+  ProductDetails: (p) => {
+    set({ Product: p });
+  },
+}));
 
 export default useStore;
