@@ -1,8 +1,46 @@
+import { useNavigate } from "react-router-dom";
 import { Button } from "../../components/ui/Button";
 import { Input } from "../../components/ui/Input";
 import { Textarea } from "../../components/ui/Textarea";
+import useStore from "../../store/store";
+import { useState } from "react";
 
 export const BookingProgress = () => {
+  const store = useStore();
+  const { bookingData, setBookingData } = store;
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+  });
+
+  const handleChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const updatedBookingData = {
+      ...bookingData,
+      ...formData,
+    };
+
+    setBookingData(updatedBookingData);
+    navigate(`/pembayaran`); // Navigate to payment page
+  };
+
+  const handleCancel = () => {
+    navigate(`/`);
+    store.setBookingData(null);
+  };
+
   return (
     <>
       <div className="flex flex-col gap-5 lg:gap-10 items-center px-6">
@@ -22,30 +60,31 @@ export const BookingProgress = () => {
             Please fill up the blank fields below
           </h2>
         </div>
-        <form
-          action="/pembayaran"
-          className="flex flex-col gap-10 justify-end items-center"
-        >
+        <div className="flex flex-col gap-10 justify-end items-center">
           <div className="flex flex-col lg:flex-row gap-5 lg:gap-0 justify-end items-center">
             <div
               id="bookingInfo"
               className="flex flex-col gap-5 w-full lg:pe-20 pb-10 lg:pb-auto border-b-2 lg:border-b-0 lg:border-r-2 border-pureGray "
             >
               <img
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+                src={bookingData.product_image}
                 alt="bali"
                 className="rounded-lg lg:rounded-[30px] w-[40rem] h-[17.5rem] object-cover"
               />
               <div className="text-info flex flex-row justify-between items-center w-full">
                 <div className="title-info flex flex-col">
-                  <h1 className="text-xl lg:text-2xl">Blue Origin Fams</h1>
+                  <h1 className="text-xl lg:text-2xl">{bookingData.title}</h1>
                   <h1 className="text-l lg:text-xl text-darkGray">
-                    Bali, Indonesia
+                    {bookingData.tour_location} - {bookingData.tour_duration}
+                  </h1>
+                  <h1 className="text-l lg:text-xl text-darkGray"></h1>
+                  <h1 className="text-l lg:text-xl text-darkGray">
+                    tanggal booking: {bookingData.date}
                   </h1>
                 </div>
                 <div className="price-info">
                   <h1 className="text-xl lg:text-2xl text-secondary">
-                    $480 USD
+                    {bookingData.price}
                   </h1>
                 </div>
               </div>
@@ -56,22 +95,35 @@ export const BookingProgress = () => {
             >
               <div className="flex flex-col gap-1">
                 <label htmlFor="name">Full Name</label>
-                <Input name="name" placeholder="Please enter your name" />
+                <Input
+                  name="name"
+                  placeholder="Please enter your name"
+                  value={bookingData.name} onChange={handleChange}
+                />
               </div>
               <div className="flex flex-col gap-1">
                 <label htmlFor="email">Email</label>
-                <Input name="email" placeholder="Please enter your email" />
+                <Input
+                  name="email"
+                  placeholder="Please enter your email"
+                  value={bookingData.email} onChange={handleChange}
+                />
               </div>
               <div className="flex flex-col gap-1">
                 <label htmlFor="phone">Phone Number</label>
                 <Input
                   name="phone"
                   placeholder="Please enter your phone number"
+                  value={bookingData.phone} onChange={handleChange}
                 />
               </div>
               <div className="flex flex-col gap-2">
                 <label htmlFor="address">Address</label>
-               <Textarea name="address" placeholder="Please enter your address" />
+                <Textarea
+                  name="address"
+                  placeholder="Please enter your address"
+                  value={bookingData.address} onChange={handleChange}
+                />
               </div>
             </div>
           </div>
@@ -79,16 +131,16 @@ export const BookingProgress = () => {
             <Button
               title="Bayar"
               style="bg-secondary text-white hover:bg-primary"
-              onClick={() => alert("Bayar clicked!")}
+              onClick={handleSubmit}
             />
 
             <Button
               title="Batal"
               style="bg-lightGray text-secondary border-2 border-secondary hover:border-pink hover:text-pink"
-              onClick={() => alert("Batal clicked!")}
+              onClick={handleCancel}
             />
           </div>
-        </form>
+        </div>
       </div>
     </>
   );

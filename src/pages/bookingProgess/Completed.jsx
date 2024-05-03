@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
 import completed_illustration from "../../assets/illustrations/completed.svg";
+import useStore from "../../store/store";
 
 export const Completed = () => {
+  const store = useStore();
+  const { bookingData, checkoutData } = store;
+
+  console.log(bookingData)
+  console.log(checkoutData)
   return (
     <section
       data-aos="zoom-out"

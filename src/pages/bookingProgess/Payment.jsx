@@ -1,9 +1,51 @@
+import { useState } from "react";
 import bca_icon from "../../assets/icons/bca_bank.png";
 import mandiri_icon from "../../assets/icons/mandiri_bank.png";
 import { Button } from "../../components/ui/Button";
 import { Input } from "../../components/ui/Input";
+import useStore from "../../store/store";
+import { useNavigate } from "react-router-dom";
 
 export const Payment = () => {
+  const store = useStore();
+  const { bookingData, checkoutData, setCheckoutData } = store;
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    name: "",
+    bank_name: "",
+    transfer_receipt: "",
+  });
+
+  const handleChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const checkout = {
+      ...bookingData,
+      ...formData,
+    }
+
+    const updateCheckoutData = {
+      ...checkoutData,
+      ...checkout
+    };
+
+    setCheckoutData(updateCheckoutData);
+    navigate(`/booking-selesai`); // Navigate to payment page
+  };
+
+  const handleCancel = () => {
+    navigate('booking-progres');
+  };
+
+  console.log(bookingData);
   return (
     <section
       data-aos="zoom-out"
@@ -67,11 +109,11 @@ export const Payment = () => {
               >
                 <div className="flex flex-col gap-1">
                   <label htmlFor="name">Nama Pengirim</label>
-                  <Input name="name" placeholder="Masukan nama pengirim" />
+                  <Input name="name" placeholder="Masukan nama pengirim" value={checkoutData.name} onChange={handleChange}/>
                 </div>
                 <div className="flex flex-col gap-1">
                   <label htmlFor="bank_name">Nama Bank</label>
-                  <Input name="bank_name" placeholder="Masukan nama bank" />
+                  <Input name="bank_name" placeholder="Masukan nama bank" value={checkoutData.bank_name} onChange={handleChange}/>
                 </div>
 
                 <div className="flex flex-col gap-1">
@@ -82,6 +124,7 @@ export const Payment = () => {
                     name="transfer_receipt"
                     type="file"
                     accept=".jpg, .jpeg, .png"
+                    value={checkoutData.transfer_receipt} onChange={handleChange}
                   />
                 </div>
               </div>
@@ -90,13 +133,13 @@ export const Payment = () => {
               <Button
                 title="Kirim"
                 style="bg-secondary text-white hover:bg-primary"
-                onClick={() => alert("Bayar clicked!")}
+                onClick={handleSubmit}
               />
 
               <Button
                 title="Batal"
                 style="bg-lightGray text-secondary border-2 border-secondary hover:border-pink hover:text-pink"
-                onClick={() => alert("Batal clicked!")}
+                onClick={handleCancel}
               />
             </div>
           </form>
