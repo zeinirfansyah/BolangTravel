@@ -6,13 +6,15 @@ const initialState = {
   isLoading: true,
   products: [],
   product: [],
+  bookingData: [],
+  checkoutData: [],
 };
 
 const useStore = create(
   persist(
     (set) => ({
       ...initialState,
-
+    
       fetchProducts: async () => {
         try {
           await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -24,6 +26,9 @@ const useStore = create(
           console.error("Error fetching products:", error);
         }
       },
+    
+      setBookingData: (bookingData) => set({ bookingData }),
+      setCheckoutData: (checkoutData) => set({ checkoutData }),
     }),
     {
       name: "bolangTravelStore",

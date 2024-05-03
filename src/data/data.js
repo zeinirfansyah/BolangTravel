@@ -50,7 +50,7 @@ const data = [
         destination_name: "Pulau Seribu",
         destination_description:
           "Nikmati keindahan pulau seribu dengan berbagai aktivitas menarik seperti snorkeling, diving, dan berjemur di pantai pasir putihnya.",
-        destination_image: image11,
+        destination_image: image1,
       },
     ],
     rundown: [
