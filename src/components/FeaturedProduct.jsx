@@ -9,7 +9,7 @@ const FeaturedProduct = ({ product, onProductDetails }) => {
         key={product.id}
         onClick={() => onProductDetails(product)}
         to="product-detail"
-        className="min-h-[280px]"
+        className="min-h-[240px]"
       >
         <div
           data-aos="fade-down"
