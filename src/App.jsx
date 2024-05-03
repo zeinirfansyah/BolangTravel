@@ -16,7 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/tentang-kami" element={<About />} />
           <Route path="/paket-wisata" element={<TravelPackage />} />
-          <Route path="/detail-paket/" element={<PackageDetail />} />
+          <Route path="/paket-wisata/:id" element={<PackageDetail />} />
           <Route path="/booking-progres" element={<BookingProgress />} />
           <Route path="/pembayaran" element={<Payment />} />
           <Route path="/booking-selesai" element={<Completed />} />

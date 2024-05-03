@@ -2,13 +2,12 @@ import LinesEllipsis from "react-lines-ellipsis";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const FeaturedProduct = ({ product, onProductDetails }) => {
+const FeaturedProduct = ({ product }) => {
   return (
     <>
       <Link
         key={product.id}
-        onClick={() => onProductDetails(product)}
-        to="product-detail"
+        to={`/paket-wisata/${product.id}`}
         className="min-h-[240px]"
       >
         <div
@@ -51,7 +50,6 @@ const FeaturedProduct = ({ product, onProductDetails }) => {
 
 FeaturedProduct.propTypes = {
     product: PropTypes.object.isRequired,
-    onProductDetails: PropTypes.func.isRequired,
   };
 
 export default FeaturedProduct;
