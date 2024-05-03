@@ -233,5 +233,57 @@
         "agenda": "Bersepeda di pedalaman Bali sekitar desa Baturiti. Nikmati pemandangan alam yang indah dan interaksi dengan penduduk setempat. Perjalanan selesai dengan drop-off di Bandara Ngurah Rai."
       }
     ]
+  },
+  {
+    "id": 6,
+    "category": "Group",
+    "title": "Bali Wellness Retreat",
+    "tour_location": "Bali, Indonesia",
+    "tour_duration": "4 Hari",
+    "price": "Rp. 30.000.000",
+    "description": "Recharge your mind, body, and soul with this wellness retreat in Bali. Experience yoga sessions, spa treatments, and healthy cuisine amidst the serene natural surroundings of Ubud.",
+    "product_image": "https://source.unsplash.com/random/800x600/?wellness",
+    "destinations": [
+      {
+        "id": 1,
+        "destination_name": "Ubud",
+        "destination_description": "Immerse yourself in the tranquil ambiance of Ubud, the heart of Bali's wellness scene. Participate in daily yoga sessions, meditation, and mindfulness practices.",
+        "image_url": "https://source.unsplash.com/random/800x600/?wellness"
+      },
+      {
+        "id": 2,
+        "destination_name": "Spa & Wellness Centers",
+        "destination_description": "Indulge in rejuvenating spa treatments and holistic wellness therapies at renowned wellness centers in Ubud. Restore your balance and vitality.",
+        "image_url": "https://source.unsplash.com/random/800x600/?wellness"
+      },
+      {
+        "id": 3,
+        "destination_name": "Organic Cuisine",
+        "destination_description": "Nourish your body with wholesome and nutritious organic cuisine prepared by expert chefs. Enjoy farm-to-table dining experiences amidst lush green surroundings.",
+        "image_url": "https://source.unsplash.com/random/800x600/?wellness"
+      }
+    ],
+    "rundown": [
+      {
+        "id": 1,
+        "title": "Day 1",
+        "agenda": "Arrive in Bali and transfer to your wellness retreat center in Ubud. Settle in and unwind with a welcome drink. Enjoy a relaxing evening and healthy dinner."
+      },
+      {
+        "id": 2,
+        "title": "Day 2",
+        "agenda": "Start your day with a rejuvenating yoga session amidst nature. Followed by a nutritious breakfast. Spend the day indulging in spa treatments and wellness activities."
+      },
+      {
+        "id": 3,
+        "title": "Day 3",
+        "agenda": "Continue your wellness journey with morning yoga and meditation. Explore the local surroundings of Ubud or opt for additional spa treatments. Evening relaxation session."
+      },
+      {
+        "id": 4,
+        "title": "Day 4",
+        "agenda": "Conclude your wellness retreat with a final yoga session and healthy breakfast. Checkout from the retreat center and transfer to the airport for your departure."
+      }
+    ]
   }
 ]
