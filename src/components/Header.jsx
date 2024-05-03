@@ -14,7 +14,7 @@ export const Header = () => {
         <nav className="Navbar md:flex justify-start gap-20 items-center py-6 mx-4">
           <ul className="flex items-center justify-between">
             <li>
-              <Link id="brand" to="index.html">
+              <Link id="brand" to="/">
                 <h1 className="text-xl font-semibold  transition-all duration-500">
                   <span className="text-secondary">Bolang</span>Travel.
                 </h1>
@@ -30,9 +30,7 @@ export const Header = () => {
           </ul>
           <ul
             id="menu"
-            className={`md:flex gap-5 ${
-              isMenuOpen ? "" : "hidden"
-            } text-navy`}
+            className={`md:flex gap-5 ${isMenuOpen ? "" : "hidden"} text-navy`}
           >
             <li className="my-5 md:my-0">
               <Link
@@ -56,14 +54,6 @@ export const Header = () => {
                 className="hover:text-secondary transition-all duration-500"
               >
                 Tentang Kami
-              </Link>
-            </li>
-            <li className="my-5 md:my-0">
-              <Link
-                to="#footer"
-                className="hover:text-secondary transition-all duration-500"
-              >
-                Kontak
               </Link>
             </li>
           </ul>
