@@ -19,7 +19,7 @@ const data = [
     title: "Pulau Seribu Pesona",
     tour_location: "Bali, Indonesia",
     tour_duration: "3 Hari",
-    price: "Rp. 20.000.000",
+    price: 20000000,
     description:
       "Jelajahi keindahan alam dan budaya Bali dengan paket liburan eksklusif ini. Kunjungi tempat-tempat indah seperti Pantai Kuta, Ubud, dan Tanah Lot bersama keluarga Anda.",
     product_image: image1,
@@ -80,7 +80,7 @@ const data = [
     title: "Bali Adventure",
     tour_location: "Bali, Indonesia",
     tour_duration: "3 Hari",
-    price: "Rp. 25.000.000",
+    price: 25000000,
     description:
       "Jelajahi petualangan seru di Bali dengan paket liburan ini. Nikmati aktivitas menyenangkan seperti arung jeram di Sungai Ayung, snorkeling di Pulau Menjangan, dan trekking di Gunung Batur.",
     product_image: image2,
@@ -134,7 +134,7 @@ const data = [
     title: "Bali Relaxation",
     tour_location: "Bali, Indonesia",
     tour_duration: "3 Hari",
-    price: "Rp. 18.000.000",
+    price: 18000000,
     description:
       "Nikmati liburan santai di Bali dengan paket ini. Santai di tepi pantai, pijat tradisional Bali, dan menikmati keindahan alam yang menenangkan di Ubud.",
     product_image: image3,
@@ -188,7 +188,7 @@ const data = [
     title: "Bali Cultural Immersion",
     tour_location: "Bali, Indonesia",
     tour_duration: "3 Hari",
-    price: "Rp. 22.000.000",
+    price: 20000000,
     description:
       "Telusuri kekayaan budaya Bali dengan paket liburan ini. Ikuti upacara adat, kunjungi desa tradisional, dan cicipi kuliner khas Bali yang autentik.",
     product_image: image4,
@@ -242,7 +242,7 @@ const data = [
     title: "Bali Nature Retreat",
     tour_location: "Bali, Indonesia",
     tour_duration: "3 Hari",
-    price: "Rp. 23.000.000",
+    price: 23000000,
     description:
       "Hadapi petualangan alam di Bali dengan paket liburan ini. Telusuri keindahan alam dengan trekking ke air terjun, bersepeda di pedalaman Bali, dan mengunjungi taman burung eksotis.",
     product_image: image5,
@@ -296,7 +296,7 @@ const data = [
     title: "Bali Wellness Retreat",
     tour_location: "Bali, Indonesia",
     tour_duration: "4 Hari",
-    price: "Rp. 30.000.000",
+    price: 25000000,
     description:
       "Recharge your mind, body, and soul with this wellness retreat in Bali. Experience yoga sessions, spa treatments, and healthy cuisine amidst the serene natural surroundings of Ubud.",
     product_image:image6,
