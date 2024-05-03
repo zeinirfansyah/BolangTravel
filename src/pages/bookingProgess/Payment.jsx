@@ -83,10 +83,10 @@ export const Payment = () => {
               >
                 <h1 className="text-xl lg:text-2xl">Payment Information</h1>
                 <ul className="flex flex-col gap-2">
-                  <li>Travel Package : Blue Origin Fams</li>
-                  <li>Price : $480 USD</li>
-                  <li>Tax : 11%</li>
-                  <li>Total : $510 USD</li>
+                  <li>Paket Wisata : {bookingData.title}</li>
+                  <li>Harga : Rp. {bookingData.price}</li>
+                  <li>PPN : 11%</li>
+                  <li>Total : Rp. {Math.round(bookingData.price * 1.11)}</li>
                 </ul>
                 <div className="bank-card px-4 py-4 shadow flex flex-row gap-4 justify-between items-center">
                   <img src={bca_icon} alt="bank_bca" />
