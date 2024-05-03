@@ -61,15 +61,15 @@ export const Home = () => {
               ))}
             </div>
           </div>
-          <div className="flex flex-row justify-center gap-14 items-center py-14">
-            <div className="w-1/4">
+          <div className="flex flex-col lg:flex-row justify-center gap-14 items-center py-14">
+            <div className="lg:w-1/4">
               <img
                 src={image14}
                 alt="image14"
-                className="outline-dashed outline-2 outline-darkGray outline-offset-8 rounded-br-[150px] rounded-lg max-h-[480px]"
+                className="outline-dashed outline-2 outline-darkGray outline-offset-8 lg:rounded-br-[150px] rounded-lg max-h-[480px]"
               />
             </div>
-            <div className="flex flex-col gap-7 w-1/2">
+            <div className="flex flex-col gap-7 lg:w-1/2">
               <div>
                 <h1 className="text-2xl font-semibold">Happy Family</h1>
               </div>
