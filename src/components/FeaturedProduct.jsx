@@ -27,7 +27,7 @@ const FeaturedProduct = ({ product, onProductDetails }) => {
                 {product.tour_location}
               </div>
             </div>
-            <div className="absolute left-0 bottom-0 rounded-bl-xl rounded-tr-xl py-3 px-5 text-white grid gap-2">
+            <div className="absolute left-0 bottom-0 rounded-bl-xl rounded-tr-xl py-3 px-5 text-white grid gap-2 w-full">
               <LinesEllipsis
                 text={product.title}
                 maxLine="2"

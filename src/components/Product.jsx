@@ -19,16 +19,21 @@ const Product = ({ product, onProductDetails }) => {
             className="mb-3 lazyload rounded-xl object-cover h-52 w-full lg:w-80 lazyloaded"
           />
         </picture>
-        <LinesEllipsis
-          text={product.title}
-          maxLine="2"
-          ellipsis="..."
-          trimRight
-          basedOn="letters"
-          className="text-dark font-medium text-lg lg:text-base text-center lg:text-left"
-        />
-        <div className="text-slate-400 text-base lg:text-sm text-center lg:text-left">
-          {product.tour_location}
+        <div className="flex flex-col">
+          <LinesEllipsis
+            text={product.title}
+            maxLine="2"
+            ellipsis="..."
+            trimRight
+            basedOn="letters"
+            className="text-dark font-medium text-lg lg:text-base "
+          />
+          <p className="text-slate-400 text-base lg:text-sm">
+            {product.price} - {product.tour_duration}
+          </p>
+          <p className="text-slate-400 text-base lg:text-sm">
+            {product.tour_location}
+          </p>
         </div>
       </Link>
     </>
