@@ -1,4 +1,4 @@
-import image from "../../assets/image/14.png";
+import family from "../../assets/image/14.webp";
 import icons_whatsapp from "../../assets/icons/icons8-whatsapp.svg";
 import icons_instagram from "../../assets/icons/icons8-instagram.svg";
 import icons_googleMaps from "../../assets/icons/icons8-google-maps-old.svg";
@@ -10,7 +10,7 @@ export const About = () => {
     <>
       <main>
         <section
-          dataAos="zoom-out"
+          data-aos="zoom-out"
           id="about"
           className="bg-[#fff] transition-all duration-500 py-20"
         >
@@ -23,7 +23,7 @@ export const About = () => {
                 className="lg:w-1/3 flex justify-center items-center lg:my-7"
               >
                 <img
-                  src={image}
+                  src={family}
                   alt="Zein Irfansyah"
                   className="transition duration-500 w-[320px] h-[420px] object-cover rounded-2xl lg:rounded-br-[100px] shadow outline-dashed outline-[#B0B0B0] outline-2 outline-offset-8" />
               </div>
