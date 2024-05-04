@@ -54,10 +54,10 @@ export const BookingProgress = () => {
             </span>
           </div>
           <h1 className="text-2xl lg:text-3xl font-bold text-center">
-            Booking Information
+            Informasi Booking
           </h1>
           <h2 className="text-l lg:text-xl text-center text-darkGray">
-            Please fill up the blank fields below
+            Silahkan lengkapi informasi booking anda untuk melanjutkan
           </h2>
         </div>
         <div className="flex flex-col gap-10 justify-end items-center">
@@ -94,10 +94,10 @@ export const BookingProgress = () => {
               className="flex flex-col gap-5 w-full lg:ps-20"
             >
               <div className="flex flex-col gap-1">
-                <label htmlFor="name">Full Name</label>
+                <label htmlFor="name">Nama Lengkap</label>
                 <Input
                   name="name"
-                  placeholder="Please enter your name"
+                  placeholder="Masukkan nama anda"
                   value={bookingData.name} onChange={handleChange}
                 />
               </div>
@@ -105,23 +105,23 @@ export const BookingProgress = () => {
                 <label htmlFor="email">Email</label>
                 <Input
                   name="email"
-                  placeholder="Please enter your email"
+                  placeholder="Masukan email anda"
                   value={bookingData.email} onChange={handleChange}
                 />
               </div>
               <div className="flex flex-col gap-1">
-                <label htmlFor="phone">Phone Number</label>
+                <label htmlFor="phone">Nomor Telepon</label>
                 <Input
                   name="phone"
-                  placeholder="Please enter your phone number"
+                  placeholder="Masukan nomor telepon anda"
                   value={bookingData.phone} onChange={handleChange}
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <label htmlFor="address">Address</label>
+                <label htmlFor="address">Alamat</label>
                 <Textarea
                   name="address"
-                  placeholder="Please enter your address"
+                  placeholder="Masukan alamat anda"
                   value={bookingData.address} onChange={handleChange}
                 />
               </div>
