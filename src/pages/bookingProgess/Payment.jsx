@@ -66,10 +66,10 @@ export const Payment = () => {
               </span>
             </div>
             <h1 className="text-2xl lg:text-3xl font-bold text-center">
-              Payment
+              Pembayaran
             </h1>
             <h2 className="text-l lg:text-xl text-center text-darkGray">
-              Please fill up the blank fields below
+              Silahkan lengkapi informasi pembayaran
             </h2>
           </div>
           <form
@@ -81,7 +81,7 @@ export const Payment = () => {
                 id="paymentInfo"
                 className="flex flex-col gap-5 w-full lg:pe-20 pb-10 lg:pb-auto border-b-2 lg:border-b-0 lg:border-r-2 border-pureGray"
               >
-                <h1 className="text-xl lg:text-2xl">Payment Information</h1>
+                <h1 className="text-xl lg:text-2xl">Informasi Pembayaran</h1>
                 <ul className="flex flex-col gap-2">
                   <li>Paket Wisata : {bookingData.title}</li>
                   <li>Harga : Rp. {bookingData.price}</li>
