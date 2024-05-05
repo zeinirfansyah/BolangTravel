@@ -44,7 +44,7 @@ export const Payment = () => {
   };
 
   const handleCancel = () => {
-    navigate('booking-progres');
+    navigate('/booking-progres');
   };
 
   console.log(bookingData);
