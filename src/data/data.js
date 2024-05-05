@@ -306,14 +306,14 @@ const data = [
         destination_name: "Ubud",
         destination_description:
           "Immerse yourself in the tranquil ambiance of Ubud, the heart of Bali's wellness scene. Participate in daily yoga sessions, meditation, and mindfulness practices.",
-        destination_image:image6,
+        destination_image:image8,
       },
       {
         id: 2,
         destination_name: "Spa & Wellness Centers",
         destination_description:
           "Indulge in rejuvenating spa treatments and holistic wellness therapies at renowned wellness centers in Ubud. Restore your balance and vitality.",
-        destination_image:image6,
+        destination_image:image7,
       },
       {
         id: 3,
@@ -321,6 +321,13 @@ const data = [
         destination_description:
           "Nourish your body with wholesome and nutritious organic cuisine prepared by expert chefs. Enjoy farm-to-table dining experiences amidst lush green surroundings.",
         destination_image:image6,
+      },
+      {
+        id: 4,
+        destination_name: "Taman Burung Bali",
+        destination_description:
+          "Kunjungi Taman Burung Bali dan lihat berbagai spesies burung yang eksotis dan langka. Anda dapat menyaksikan pertunjukan burung dan berinteraksi dengan burung-burung tersebut.",
+        destination_image: image5,
       },
     ],
     rundown: [
