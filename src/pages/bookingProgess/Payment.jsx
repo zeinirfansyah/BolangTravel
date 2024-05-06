@@ -27,6 +27,15 @@ export const Payment = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    if (
+      !formData.name ||
+      !formData.bank_name ||
+      !formData.transfer_receipt
+    ) {
+      alert("Mohon isi formulir pembayaran terlebih dahuluu.");
+      return;
+    }
+
     const checkout = {
       ...bookingData,
       ...formData,
