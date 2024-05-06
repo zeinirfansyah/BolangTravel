@@ -9,6 +9,7 @@ import { Payment } from "./pages/bookingProgess/Payment";
 import { Completed } from "./pages/bookingProgess/Completed";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ProtectedRoute from "./routes/ProtectedRoute";
 
 function App() {
   AOS.init();
@@ -20,8 +21,24 @@ function App() {
           <Route path="/tentang-kami" element={<About />} />
           <Route path="/paket-wisata" element={<TravelPackage />} />
           <Route path="/paket-wisata/:id" element={<PackageDetail />} />
-          <Route path="/booking-progres" element={<BookingProgress />} />
-          <Route path="/pembayaran" element={<Payment />} />
+          <Route
+              path="/booking-progres"
+              element={
+                <ProtectedRoute redirectPath="/paket-wisata" requiredData={["date"]}>
+                  <BookingProgress />
+                </ProtectedRoute>
+              }
+            />
+          <Route
+              path="/pembayaran"
+              element={
+                <ProtectedRoute redirectPath="/booking-progres"
+                requiredData={["date", "name", "phone", "email", "address"]}>
+                  <Payment />
+                </ProtectedRoute>
+              }
+            />
+        
           <Route path="/booking-selesai" element={<Completed />} />
         </Routes>
       </Layout>
