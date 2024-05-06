@@ -26,7 +26,7 @@ export const Home = () => {
       >
         <div className="overflow-hidden bg-[#000] bg-opacity-70 ">
           <div className="max-w-7xl mx-auto px-4 h-[95vh] lg:h-[45rem] p-4 flex items-center justify-center">
-            <div className="flex flex-col gap-4 max-w-3xl">
+            <div data-aos="zoom-in-up" data-aos-duration="1000" className="flex flex-col gap-4 max-w-3xl">
               <h1 className="text-2xl lg:text-4xl mt-10 font-bold text-center text-white">
                 Temukan Keajaiban Indonesia, Eksplorasi Tanah Air Terindah!
               </h1>
@@ -45,7 +45,7 @@ export const Home = () => {
       </div>
       <div className="max-w-7xl mx-auto px-4 py-14">
         <div className="flex flex-col gap-14">
-          <div className="flex flex-col gap-4">
+          <div data-aos="zoom-in-up" data-aos-duration="1000" className="flex flex-col gap-4">
             <h1 className="text-2xl font-semibold">Rekomendasi</h1>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
               {products.map((product) => (
@@ -53,7 +53,7 @@ export const Home = () => {
               ))}
             </div>
           </div>
-          <div className="flex flex-col gap-4">
+          <div data-aos="zoom-in-up" data-aos-duration="1000" className="flex flex-col gap-4">
             <h1 className="text-2xl font-semibold">Paket Wisata Populer</h1>
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
               {products.slice(0, 4).map((product) => (
@@ -61,7 +61,7 @@ export const Home = () => {
               ))}
             </div>
           </div>
-          <div className="flex flex-col lg:flex-row justify-center gap-14 items-center py-14">
+          <div data-aos="zoom-in-up" data-aos-duration="1000" className="flex flex-col lg:flex-row justify-center gap-14 items-center py-14">
             <div className="lg:w-1/4">
               <img
                 src={image14}

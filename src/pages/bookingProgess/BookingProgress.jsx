@@ -44,7 +44,7 @@ export const BookingProgress = () => {
   return (
     <>
       <div className="flex flex-col gap-5 lg:gap-10 items-center px-6">
-        <div className="title flex flex-col justify-center items-center gap-2">
+        <div data-aos="zoom-in-up" data-aos-duration="1000" className="title flex flex-col justify-center items-center gap-2">
           <div className="flex flex-row gap-10 mb-4 mt-7">
             <span className="bg-pureGray text-xl lg:text-3xl text-darkGray rounded-xl px-4 py-1 outline outline-pureGray outline-2 outline-offset-4 transition-all duration-500">
               1
@@ -60,7 +60,7 @@ export const BookingProgress = () => {
             Silahkan lengkapi informasi booking anda untuk melanjutkan
           </h2>
         </div>
-        <div className="flex flex-col gap-10 justify-end items-center">
+        <div data-aos="zoom-in-up" data-aos-duration="1000" className="flex flex-col gap-10 justify-end items-center">
           <div className="flex flex-col lg:flex-row gap-5 lg:gap-0 justify-end items-center">
             <div
               id="bookingInfo"

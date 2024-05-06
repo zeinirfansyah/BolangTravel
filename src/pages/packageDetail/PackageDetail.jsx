@@ -38,7 +38,7 @@ export const PackageDetail = () => {
     <>
       <div className="max-w-7xl mx-auto px-4 py-7">
         <div className="flex flex-col gap-4">
-          <div className="flex flex-col  gap-3 max-w-5xl mx-auto px-4 py-12">
+          <div data-aos="zoom-in-up" data-aos-duration="1000" className="flex flex-col  gap-3 max-w-5xl mx-auto px-4 py-12">
             <h1 className="text-3xl lg:text-4xl font-bold text-center">
               {product.title}
             </h1>
@@ -46,7 +46,7 @@ export const PackageDetail = () => {
               {product.description}
             </h1>
           </div>
-          <div className="flex flex-row gap-4">
+          <div data-aos="zoom-in-up" data-aos-duration="1000" className="flex flex-row gap-4">
             <img
               src={product.destinations[0].destination_image}
               data-size="auto"
@@ -69,7 +69,7 @@ export const PackageDetail = () => {
             </div>
           </div>
           <div className="flex flex-col gap-12">
-            <div className="flex flex-col lg:flex-row gap-7 justify-between py-7">
+            <div data-aos="zoom-in-up" data-aos-duration="1000" className="flex flex-col lg:flex-row gap-7 justify-between py-7">
               <div className="flex flex-col gap-4 lg:w-1/2">
                 {product.rundown.map((rundown) => (
                   <div key={rundown.id}>
@@ -112,7 +112,7 @@ export const PackageDetail = () => {
                 </div>
               </div>
             </div>
-            <div className="hidden lg:flex flex-col gap-4 py-7">
+            <div data-aos="zoom-in-up" data-aos-duration="1000" className="hidden lg:flex flex-col gap-4 py-7">
               <h1 className="text-xl font-semibold">Popular Destinations</h1>
               <div className={`grid lg:grid-cols-4 gap-4`}>
                 {product.destinations.slice(0, 4).map((destination) => (

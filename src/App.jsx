@@ -7,8 +7,11 @@ import { BookingProgress } from "./pages/bookingProgess/BookingProgress";
 import { Layout } from "./layouts/Layout";
 import { Payment } from "./pages/bookingProgess/Payment";
 import { Completed } from "./pages/bookingProgess/Completed";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
+  AOS.init();
   return (
     <>
       <Layout>

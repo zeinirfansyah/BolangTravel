@@ -14,7 +14,7 @@ export const Completed = () => {
       id="hero"
       className="bg-white transition-all duration-500 py-7"
     >
-      <div className="max-w-7xl mx-auto">
+      <div  data-aos="zoom-in-up" data-aos-duration="1000" className="max-w-7xl mx-auto">
         <div className="flex flex-col gap-5 items-center px-6 mb-10">
           <div className="title flex flex-col justify-center items-center gap-2">
             <div className="flex flex-row gap-10 mb-4 mt-7">

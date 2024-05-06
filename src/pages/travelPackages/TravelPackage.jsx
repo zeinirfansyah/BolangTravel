@@ -16,7 +16,7 @@ export const TravelPackage = () => {
     <>
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col gap-6 my-7">
-          <div className="title flex flex-col justify-center text-center items-center gap-2 py-7">
+          <div data-aos="zoom-in-up" data-aos-duration="1000" className="title flex flex-col justify-center text-center items-center gap-2 py-7">
             <h1 className="text-3xl lg:text-4xl font-bold">
               Pilih Paket Liburan Favoritmu!
             </h1>
@@ -24,7 +24,7 @@ export const TravelPackage = () => {
               Jangan buang kesempatan liburan bersama keluarga!
             </h1>
           </div>
-          <div className="flex flex-col gap-4">
+          <div data-aos="zoom-in-up" data-aos-duration="1000" className="flex flex-col gap-4">
             <h1 className="text-2xl font-bold">Rekomendasi</h1>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
               {products.map((product) => (
@@ -35,12 +35,12 @@ export const TravelPackage = () => {
               ))}
             </div>
           </div>
-          <div className="flex flex-col lg:flex-row justify-between gap-3 px-4 py-7 ">
+          <div data-aos="zoom-in-up" data-aos-duration="1000" className="flex flex-col lg:flex-row justify-between gap-3 px-4 py-7 ">
             <Input name="Pencarian" type="text" placeholder="Pencarian" />
             <Input name="Pencarian" type="text" placeholder="Pencarian" style="hidden lg:block"/>
             <Input name="Pencarian" type="text" placeholder="Pencarian" style="hidden lg:block"/>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
+          <div data-aos="zoom-in-up" data-aos-duration="1000" className="grid grid-cols-1 lg:grid-cols-4 gap-4">
             {products.map((product) => (
               <Product
                 key={product.id}
