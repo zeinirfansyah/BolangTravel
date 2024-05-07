@@ -49,7 +49,7 @@ export const About = () => {
               <hr className="border-[#E5E5E5] w-full md:w-1/2 my-2" />
               <div id="contact" className="flex flex-col">
                 <a
-                  href="#"
+                  href="mailto:mail@zeinirfansyah.me?subject=BolangTravel Portfolio"
                   target="_blank"
                   className="text-[#B0B0B0] hover:text-[#00C0E6] transition-all duration-500 flex gap-2"
                 >
@@ -57,7 +57,7 @@ export const About = () => {
                   +620 1234 5678
                 </a>
                 <a
-                  href="https://instagram.com"
+                  href="mailto:mail@zeinirfansyah.me?subject=BolangTravel Portfolio"
                   target="_blank"
                   className="text-[#B0B0B0] hover:text-[#00C0E6] transition-all duration-500 flex gap-2"
                 >
@@ -65,7 +65,7 @@ export const About = () => {
                   bolangtravel
                 </a>
                 <a
-                  href="https://instagram.com"
+                  href="mailto:mail@zeinirfansyah.me?subject=BolangTravel Portfolio"
                   target="_blank"
                   className="text-[#B0B0B0] hover:text-[#00C0E6] transition-all duration-500 flex gap-2"
                 >
