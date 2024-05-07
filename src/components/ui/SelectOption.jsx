@@ -10,7 +10,7 @@ const SelectOption = ({ options, value, onChange }) => {
       <select
         value={value}
         onChange={onChange}
-        className={`border bg-[#fbfcff] rounded-lg p-4 w-full focus:outline-secondary focus:ring-0 focus:bg-white transition-all duration-500 `}
+        className={`border bg-white rounded-lg p-4 w-full focus:outline-secondary focus:ring-0 focus:bg-white transition-all duration-500 `}
       >
         {combinedOptions.map((option) => (
           <option key={option.value} value={option.value}>
