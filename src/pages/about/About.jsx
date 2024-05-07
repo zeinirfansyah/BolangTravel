@@ -8,7 +8,8 @@ export const About = () => {
   return (
     <>
       <div
-        data-aos="zoom-in-up" data-aos-duration="1000"
+        data-aos="zoom-in-up"
+        data-aos-duration="1000"
         id="about"
         className="bg-[#fff] transition-all duration-500 py-20"
       >
@@ -29,19 +30,21 @@ export const About = () => {
                 <span className="text-[#00C0E6]">Bolang</span>Travel.
               </h1>
               <p className="text-[#B0B0B0]">
-                Discover the world with BolangTravel, your premier destination
-                for unparalleled adventures. From relaxing beach getaways to
-                thrilling mountain expeditions, we specialize in creating
-                bespoke travel experiences tailored to your preferences. With
-                our dedicated team of experts and attention to detail, every
-                aspect of your journey is meticulously planned, leaving you free
-                to immerse yourself in the wonders of exploration.
+                Jelajahi dunia bersama BolangTravel, destinasi utama Anda untuk
+                petualangan tiada duanya. Mulai dari liburan pantai yang
+                menenangkan hingga ekspedisi gunung yang mendebarkan, kami ahli
+                dalam menciptakan pengalaman wisata yang dibuat khusus sesuai
+                dengan preferensi Anda. Dengan tim ahli kami yang berdedikasi
+                dan perhatian terhadap detail, setiap aspek perjalanan Anda
+                direncanakan dengan teliti, membuat Anda bebas untuk menghimpun
+                pengalaman luar biasa dalam penjelajahan.
               </p>
               <p className="text-[#B0B0B0]">
-                At BolangTravel, we tailor every trip to your unique desires,
-                offering cultural immersion, thrilling activities, or tranquil
-                escapes. Let us be your trusted partner in crafting
-                unforgettable journeys that inspire and delight
+                Di BolangTravel, kami menyesuaikan setiap perjalanan dengan
+                keinginan unik Anda, menawarkan pendalaman budaya, aktivitas
+                menegangkan, atau pelarian yang tenang. Biarkan kami menjadi
+                mitra tepercaya Anda dalam menciptakan perjalanan tak terlupakan
+                yang menginspirasi dan menyenangkan.
               </p>
               <hr className="border-[#E5E5E5] w-full md:w-1/2 my-2" />
               <div id="contact" className="flex flex-col">
