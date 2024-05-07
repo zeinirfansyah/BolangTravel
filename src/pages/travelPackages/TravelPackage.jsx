@@ -12,6 +12,7 @@ export const TravelPackage = () => {
   const selectedCategory = store.selectedCategory;
   const setSelectedCategory = store.setSelectedCategory;
 
+  const [searchTerm, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState(products);
 
   useEffect(() => {
@@ -19,21 +20,39 @@ export const TravelPackage = () => {
   }, [store]);
 
   useEffect(() => {
-    const filterProductsByCategory = () => {
+    const filterProducts = () => {
+      let filteredList = products;
       if (selectedCategory) {
-        setFilteredProducts(
-          products.filter((product) => product.category === selectedCategory)
+        filteredList = filteredList.filter(
+          (product) => product.category === selectedCategory
         );
-      } else {
-        setFilteredProducts(products);
       }
+  
+      if (searchTerm) {
+        filteredList = filteredList.filter((product) => {
+          const searchTextLower = searchTerm.toLowerCase();
+          return (
+            product.title.toLowerCase().includes(searchTextLower) ||
+            product.tour_location.toLowerCase().includes(searchTextLower) ||
+            product.destinations.some((destination) =>
+              destination.destination_name.toLowerCase().includes(searchTextLower)
+            )
+          );
+        });
+      }
+      setFilteredProducts(filteredList);
     };
-
-    filterProductsByCategory();
-  }, [products, selectedCategory]);
+  
+    filterProducts();
+  }, [products, selectedCategory, searchTerm]);
+  
 
   const handleSelectChange = (event) => {
     setSelectedCategory(event.target.value);
+  };
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
   };
 
   const filterOptions = categories.map((category) => ({
@@ -74,13 +93,17 @@ export const TravelPackage = () => {
             data-aos-duration="1000"
             className="flex flex-col lg:flex-row justify-between gap-3 px-4 py-7 "
           >
-            <SelectOption
-              options={filterOptions}
-              value={selectedCategory}
-              onChange={handleSelectChange}
-              label="Category"
-            />
-            <Input label="Search" />
+            <div className="lg:w-3/4">
+              <Input name="search" type="text" placeholder="Cari Paket Wisatamu!" onChange={handleSearchChange} value={searchTerm} />
+            </div>
+            <div className="lg:w-1/4">
+              <SelectOption
+                options={filterOptions}
+                value={selectedCategory}
+                onChange={handleSelectChange}
+                label="Category"
+              />
+            </div>
           </div>
           <div
             data-aos="zoom-in-up"
