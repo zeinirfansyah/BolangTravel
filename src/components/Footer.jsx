@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 export const Footer = () => {
   return (
     <>
@@ -13,22 +11,22 @@ export const Footer = () => {
             </div>
             <ul id="footer-contact" className="flex flex-col gap-2">
               <li className="text-darkGray">
-                <Link
-                  to=""
+                <a
+                  href="mailto:mail@zeinirfansyah.me?subject=BolangTravel Portfolio"
                   target="_blank"
                   className="hover:text-secondary transition-all duration-500"
                 >
                   support@bolangtravel.id
-                </Link>
+                </a>
               </li>
               <li className="text-darkGray">
-                <Link
-                  to=""
+                <a
+                  href="mailto:mail@zeinirfansyah.me?subject=BolangTravel Portfolio"
                   target="_blank"
                   className="hover:text-secondary transition-all duration-500"
                 >
                   620 1234 5678
-                </Link>
+                </a>
               </li>
               <li className="text-darkGray">
                 © 2024 All rights reserved - BolangTravel

@@ -6,7 +6,7 @@ export const Textarea = ({ name, placeholder, onChange }) => {
       name={name}
       placeholder={placeholder}
       onChange={onChange}
-      className="border-none bg-[#F5F6F8] rounded-lg p-4 w-full focus:outline-secondary focus:ring-0 focus:bg-white transition-all duration-500"
+      className="border bg-white rounded-lg p-4 w-full focus:outline-secondary focus:ring-0 focus:bg-white transition-all duration-500"
       rows="2"
       cols="30"
     />
