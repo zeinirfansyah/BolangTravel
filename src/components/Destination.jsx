@@ -10,7 +10,7 @@ const Destination = ({ destination }) => {
       >
         <picture>
           <img
-            src={destination.destination_image}
+            src={destination.thumbnail}
             data-size="auto"
             alt="Foto Destinasi Tanjung Benoa"
             className="mb-3 lazyload rounded-xl object-cover h-52 w-full lg:w-80 lazyloaded"
@@ -18,7 +18,7 @@ const Destination = ({ destination }) => {
         </picture>
         <div className="flex flex-col">
           <LinesEllipsis
-            text={destination.destination_name}
+            text={destination.title}
             maxLine="2"
             ellipsis="..."
             trimRight

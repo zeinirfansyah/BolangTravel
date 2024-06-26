@@ -12,11 +12,13 @@ import { useNavigate } from "react-router-dom";
 export const Home = () => {
   const navigate = useNavigate();
   const store = useStore();
-  const products = store.products;
+  const products = store.products?.data?.rows;
 
   useEffect(() => {
     store.fetchProducts();
-  }, [store]);
+  }, []);
+
+  console.log(products);
   return (
     <>
       <div
@@ -48,16 +50,16 @@ export const Home = () => {
           <div data-aos="zoom-in-up" data-aos-duration="1000" className="flex flex-col gap-4">
             <h1 className="text-2xl font-semibold">Rekomendasi</h1>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-              {products.map((product) => (
-                <FeaturedProduct key={product.id} product={product} />
+              {products?.map((product) => (
+                <FeaturedProduct key={product?.id} product={product} />
               ))}
             </div>
           </div>
           <div data-aos="zoom-in-up" data-aos-duration="1000" className="flex flex-col gap-4">
             <h1 className="text-2xl font-semibold">Paket Wisata Populer</h1>
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
-              {products.slice(0, 4).map((product) => (
-                <Product key={product.id} product={product} />
+              {products?.slice(0, 4).map((product) => (
+                <Product key={product?.id} product={product} />
               ))}
             </div>
           </div>

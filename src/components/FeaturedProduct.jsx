@@ -16,14 +16,14 @@ const FeaturedProduct = ({ product }) => {
         >
           <picture className="relative">
             <img
-              src={product.product_image}
+              src={product.thumbnail}
               data-size="auto"
               alt={product.title}
               className="lazyload rounded-xl object-cover h-60 w-full brightness-50 hover:brightness-75 lg:brightness-75 lg:hover:brightness-50 transition duration-500 lazyloaded"
             />
             <div className="absolute right-0 top-0 rounded-bl-xl rounded-tr-xl">
               <div className="items-center text-sm font-semibold  p-3 text-white">
-                {product.tour_location}
+                {product.location}
               </div>
             </div>
             <div className="absolute left-0 bottom-0 rounded-bl-xl rounded-tr-xl py-3 px-5 text-white grid gap-2 w-full">
@@ -37,8 +37,8 @@ const FeaturedProduct = ({ product }) => {
               />
 
               <div className="flex justify-between">
-                <p className="text-white">{product.price}</p>
-                <p className="text-white">{product.tour_duration}</p>
+                <p className="text-white">Rp. {product.price}</p>
+                <p className="text-white">{product.duration} Days</p>
               </div>
             </div>
           </picture>
