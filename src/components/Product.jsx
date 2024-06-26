@@ -12,7 +12,7 @@ const Product = ({ product }) => {
       >
         <picture>
           <img
-            src={product.product_image}
+            src={`http://localhost:3000/${product?.thumbnail}`}
             data-size="auto"
             alt="Foto Destinasi Tanjung Benoa"
             className="mb-3 lazyload rounded-xl object-cover h-52 w-full lg:w-80 lazyloaded"

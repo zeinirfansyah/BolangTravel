@@ -85,7 +85,7 @@ export const BookingProgress = () => {
               className="flex flex-col gap-5 w-full lg:pe-20 pb-10 lg:pb-auto border-b-2 lg:border-b-0 lg:border-r-2 border-pureGray "
             >
               <img
-                src={bookingData.product_image}
+                src={`http://localhost:3000/${bookingData.thumbnail}`}
                 alt="bali"
                 className="rounded-lg lg:rounded-[30px] w-[40rem] h-[17.5rem] object-cover"
               />
@@ -93,7 +93,7 @@ export const BookingProgress = () => {
                 <div className="title-info flex flex-col">
                   <h1 className="text-xl lg:text-2xl">{bookingData.title}</h1>
                   <h1 className="text-l lg:text-xl text-darkGray">
-                    {bookingData.tour_location} - {bookingData.tour_duration}
+                    {bookingData.location} - {bookingData.duration} Days
                   </h1>
                   <h1 className="text-l lg:text-xl text-darkGray"></h1>
                   <h1 className="text-l lg:text-xl text-darkGray">

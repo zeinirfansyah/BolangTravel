@@ -38,8 +38,6 @@ export const PackageDetail = () => {
     store.fetchDetailProduct(id);
   }, []);
 
-  console.log(product);
-
   return (
     <>
       <div className="max-w-7xl mx-auto px-4 py-7">
@@ -62,23 +60,20 @@ export const PackageDetail = () => {
             className="flex flex-row gap-4"
           >
             <img
-              src={product?.destinations[0]?.thumbnail}
+              src={`http://localhost:3000/${product?.destinations[0]?.thumbnail}`}
               alt={product?.destinations[0]?.thumbnail}
               data-size="auto"
               className="lazyload lazyloaded rounded-xl object-cover w-2/3 maxh-[560px]"
-              onError={(error) => {
-                console.error("Image loading error:", error);
-              }}
             />
             <div className="flex flex-col gap-4 max-h-[560px]">
               <img
-                src={product?.destinations[1]?.thumbnail}
+                src={`http://localhost:3000/${product?.destinations[1]?.thumbnail}`}
                 data-size="auto"
                 alt={product?.destinations[1]?.thumbnail}
                 className="lazyload lazyloaded rounded-xl object-cover max-h-72"
               />
               <img
-                src={product?.destinations[2]?.thumbnail}
+                src={`http://localhost:3000/${product?.destinations[2]?.thumbnail}`}
                 data-size="auto"
                 alt={product?.destinations[2]?.thumbnail}
                 className="lazyload lazyloaded rounded-xl object-cover max-h-72"

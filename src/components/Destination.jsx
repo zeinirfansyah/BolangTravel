@@ -10,7 +10,7 @@ const Destination = ({ destination }) => {
       >
         <picture>
           <img
-            src={destination.thumbnail}
+            src={`http://localhost:3000/${destination?.thumbnail}`}
             data-size="auto"
             alt="Foto Destinasi Tanjung Benoa"
             className="mb-3 lazyload rounded-xl object-cover h-52 w-full lg:w-80 lazyloaded"
