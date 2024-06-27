@@ -43,14 +43,14 @@ const useStore = create(
     setSelectedCategory: (category) =>
       set((state) => ({ ...state, selectedCategory: category })),
 
-    filterProducts: () =>
-      set((state) => ({
-        filteredProducts: state.selectedCategory
-          ? state.products.filter(
-              (product) => product.category === state.selectedCategory
-            )
-          : state.products,
-      })),
+    // filterProducts: () =>
+    //   set((state) => ({
+    //     filteredProducts: state.selectedCategory
+    //       ? state.products.filter(
+    //           (product) => product.category === state.selectedCategory
+    //         )
+    //       : state.products,
+    //   })),
 
     setBookingData: (bookingData) => set({ bookingData }),
     setCheckoutData: (checkoutData) => set({ checkoutData }),
