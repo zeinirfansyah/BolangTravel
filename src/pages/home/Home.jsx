@@ -27,7 +27,11 @@ export const Home = () => {
       >
         <div className="overflow-hidden h-screen bg-[#000] bg-opacity-70 ">
           <div className="max-w-7xl mx-auto px-4 h-screen p-4 flex items-center justify-center">
-            <div data-aos="zoom-in-up" data-aos-duration="1000" className="flex flex-col gap-4 max-w-3xl">
+            <div
+              data-aos="zoom-in-up"
+              data-aos-duration="1000"
+              className="flex flex-col gap-4 max-w-3xl"
+            >
               <h1 className="text-2xl lg:text-4xl mt-10 font-bold text-center text-white">
                 Temukan Keajaiban Indonesia, Eksplorasi Tanah Air Terindah!
               </h1>
@@ -36,7 +40,9 @@ export const Home = () => {
                 tropis yang lebat hingga puncak-puncak gunung yang menantang.
               </h4>
               <Button
-                onClick={() => {navigate('paket-wisata')}}
+                onClick={() => {
+                  navigate("paket-wisata");
+                }}
                 title="Pesan Sekarang"
                 style="bg-secondary hover:bg-primary text-white max-w-[240px] mx-auto"
               />
@@ -46,23 +52,35 @@ export const Home = () => {
       </div>
       <div className="max-w-7xl mx-auto px-4 py-14">
         <div className="flex flex-col gap-14">
-          <div data-aos="zoom-in-up" data-aos-duration="1000" className="flex flex-col gap-4">
+          <div
+            data-aos="zoom-in-up"
+            data-aos-duration="1000"
+            className="flex flex-col gap-4"
+          >
             <h1 className="text-2xl font-semibold">Rekomendasi</h1>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-              {products?.map((product) => (
+              {products?.slice(0, 6).map((product) => (
                 <FeaturedProduct key={product?.id} product={product} />
               ))}
             </div>
           </div>
-          <div data-aos="zoom-in-up" data-aos-duration="1000" className="flex flex-col gap-4">
+          <div
+            data-aos="zoom-in-up"
+            data-aos-duration="1000"
+            className="flex flex-col gap-4"
+          >
             <h1 className="text-2xl font-semibold">Paket Wisata Populer</h1>
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
-              {products?.slice(0, 4).map((product) => (
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              {products?.slice(0, 8).map((product) => (
                 <Product key={product?.id} product={product} />
               ))}
             </div>
           </div>
-          <div data-aos="zoom-in-up" data-aos-duration="1000" className="flex flex-col lg:flex-row justify-center gap-14 items-center py-14">
+          <div
+            data-aos="zoom-in-up"
+            data-aos-duration="1000"
+            className="flex flex-col lg:flex-row justify-center gap-14 items-center py-14"
+          >
             <div className="lg:w-1/4">
               <img
                 src={image14}
@@ -86,10 +104,14 @@ export const Home = () => {
                   What a great trip with my family and I should try again next
                   time soon ...
                 </h1>
-                <h1 className="text-2xl text-darkGray">Rick Atsley, Musician</h1>
+                <h1 className="text-2xl text-darkGray">
+                  Rick Atsley, Musician
+                </h1>
               </div>
               <Button
-                onClick={() => {navigate('tentang-kami')}}
+                onClick={() => {
+                  navigate("tentang-kami");
+                }}
                 title="Tentang Kami"
                 style="bg-secondary hover:bg-primary text-white max-w-[240px]"
               />
