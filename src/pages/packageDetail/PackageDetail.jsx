@@ -86,13 +86,13 @@ export const PackageDetail = () => {
               data-aos-duration="1000"
               className="flex flex-col lg:flex-row gap-7 justify-between py-7"
             >
-              <div className="flex flex-col-reverse gap-4 lg:w-1/2">
+              <div className="flex flex-col-reverse gap-6 lg:w-1/2">
                 {product?.rundowns.map((rundown) => (
                   <div key={rundown.id}>
-                    <h1 className="text-xl lg:text-2xl font-semibold">
+                    <h1 className="text-xl lg:text-xl">
                       {rundown?.title}
                     </h1>
-                    <p className="text-sm lg:text-lg text-textGray">
+                    <p className="text-sm lg:text-l text-textGray">
                       {rundown?.agenda}
                     </p>
                   </div>
