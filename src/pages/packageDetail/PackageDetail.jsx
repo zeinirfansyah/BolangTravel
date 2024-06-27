@@ -41,11 +41,11 @@ export const PackageDetail = () => {
   return (
     <>
       <div className="max-w-7xl mx-auto px-4 py-7">
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 mt-32">
           <div
             data-aos="zoom-in-up"
             data-aos-duration="1000"
-            className="flex flex-col  gap-3 max-w-5xl mx-auto px-4 py-12"
+            className="flex flex-col gap-3 max-w-5xl mx-auto px-4 py-12"
           >
             <h1 className="text-3xl lg:text-4xl font-bold text-center">
               {product?.title}
