@@ -9,7 +9,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-10 bg-white shadow">
+    <header className="fixed left-0 right-0 top-0 z-10  bg-white shadow">
       <div className="max-w-7xl mx-auto">
         <nav className="Navbar md:flex justify-start gap-20 items-center py-6 mx-4">
           <ul className="flex items-center justify-between">

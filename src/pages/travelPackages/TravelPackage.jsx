@@ -7,7 +7,7 @@ import SelectOption from "../../components/ui/SelectOption";
 
 export const TravelPackage = () => {
   const store = useStore();
-  const products = store.products;
+  const products = store.products?.data?.rows;
   const categories = store.categories;
   const selectedCategory = store.selectedCategory;
   const setSelectedCategory = store.setSelectedCategory;
@@ -17,35 +17,34 @@ export const TravelPackage = () => {
 
   useEffect(() => {
     store.fetchProducts();
-  }, [store]);
+  }, []);
 
   useEffect(() => {
     const filterProducts = () => {
       let filteredList = products;
       if (selectedCategory) {
         filteredList = filteredList.filter(
-          (product) => product.category === selectedCategory
+          (product) => product?.category === selectedCategory
         );
       }
-  
+
       if (searchTerm) {
         filteredList = filteredList.filter((product) => {
           const searchTextLower = searchTerm.toLowerCase();
           return (
-            product.title.toLowerCase().includes(searchTextLower) ||
-            product.tour_location.toLowerCase().includes(searchTextLower) ||
-            product.destinations.some((destination) =>
-              destination.destination_name.toLowerCase().includes(searchTextLower)
+            product?.title?.toLowerCase().includes(searchTextLower) ||
+            product?.location?.toLowerCase().includes(searchTextLower) ||
+            product?.destinations?.some((destination) =>
+              destination?.title?.toLowerCase().includes(searchTextLower)
             )
           );
         });
       }
       setFilteredProducts(filteredList);
     };
-  
+
     filterProducts();
   }, [products, selectedCategory, searchTerm]);
-  
 
   const handleSelectChange = (event) => {
     setSelectedCategory(event.target.value);
@@ -67,7 +66,7 @@ export const TravelPackage = () => {
           <div
             data-aos="zoom-in-up"
             data-aos-duration="1000"
-            className="title flex flex-col justify-center text-center items-center gap-2 py-7"
+            className="title flex flex-col justify-center text-center items-center gap-2 py-7 mt-32"
           >
             <h1 className="text-3xl lg:text-4xl font-bold">
               Pilih Paket Liburan Favoritmu!
@@ -83,7 +82,7 @@ export const TravelPackage = () => {
           >
             <h1 className="text-2xl font-bold">Rekomendasi</h1>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-              {products.map((product) => (
+              {products?.slice(0, 6).map((product) => (
                 <FeaturedProduct key={product.id} product={product} />
               ))}
             </div>
@@ -94,7 +93,13 @@ export const TravelPackage = () => {
             className="flex flex-col lg:flex-row justify-between gap-3 px-4 py-7 "
           >
             <div className="lg:w-3/4">
-              <Input name="search" type="text" placeholder="Cari Paket Wisatamu!" onChange={handleSearchChange} value={searchTerm} />
+              <Input
+                name="search"
+                type="text"
+                placeholder="Cari Paket Wisatamu!"
+                onChange={handleSearchChange}
+                value={searchTerm}
+              />
             </div>
             <div className="lg:w-1/4">
               <SelectOption
@@ -108,9 +113,9 @@ export const TravelPackage = () => {
           <div
             data-aos="zoom-in-up"
             data-aos-duration="1000"
-            className="grid grid-cols-1 lg:grid-cols-4 gap-4"
+            className="grid grid-cols-2 lg:grid-cols-4 gap-4"
           >
-            {filteredProducts.map((product) => (
+            {filteredProducts?.map((product) => (
               <Product key={product.id} product={product} />
             ))}
           </div>
