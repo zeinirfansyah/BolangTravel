@@ -18,16 +18,15 @@ export const Home = () => {
     store.fetchProducts();
   }, []);
 
-  console.log(products);
   return (
     <>
       <div
         id="home"
-        className="overflow-hidden bg-cover bg-center bg-no-repeat text-center"
+        className="overflow-hidden h-screen bg-cover bg-center bg-no-repeat text-center"
         style={{ backgroundImage: `url(${image11})` }}
       >
-        <div className="overflow-hidden bg-[#000] bg-opacity-70 ">
-          <div className="max-w-7xl mx-auto px-4 h-[95vh] lg:h-[45rem] p-4 flex items-center justify-center">
+        <div className="overflow-hidden h-screen bg-[#000] bg-opacity-70 ">
+          <div className="max-w-7xl mx-auto px-4 h-screen p-4 flex items-center justify-center">
             <div data-aos="zoom-in-up" data-aos-duration="1000" className="flex flex-col gap-4 max-w-3xl">
               <h1 className="text-2xl lg:text-4xl mt-10 font-bold text-center text-white">
                 Temukan Keajaiban Indonesia, Eksplorasi Tanah Air Terindah!
