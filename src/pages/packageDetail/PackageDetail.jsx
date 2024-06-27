@@ -63,7 +63,7 @@ export const PackageDetail = () => {
               src={`http://localhost:3000/${product?.destinations[0]?.thumbnail}`}
               alt={product?.destinations[0]?.thumbnail}
               data-size="auto"
-              className="lazyload lazyloaded rounded-xl object-cover w-2/3 maxh-[560px]"
+              className="lazyload lazyloaded rounded-xl object-cover w-2/3 max-h-[560px]"
             />
             <div className="flex flex-col gap-4 max-h-[560px]">
               <img
@@ -86,7 +86,7 @@ export const PackageDetail = () => {
               data-aos-duration="1000"
               className="flex flex-col lg:flex-row gap-7 justify-between py-7"
             >
-              <div className="flex flex-col gap-4 lg:w-1/2">
+              <div className="flex flex-col-reverse gap-4 lg:w-1/2">
                 {product?.rundowns.map((rundown) => (
                   <div key={rundown.id}>
                     <h1 className="text-xl lg:text-2xl font-semibold">
