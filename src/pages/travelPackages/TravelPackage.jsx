@@ -62,7 +62,7 @@ export const TravelPackage = () => {
   return (
     <>
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex flex-col gap-6 my-7">
+        <div className="flex flex-col gap-6">
           <div
             data-aos="zoom-in-up"
             data-aos-duration="1000"
