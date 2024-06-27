@@ -57,7 +57,7 @@ export const BookingProgress = () => {
         <div
           data-aos="zoom-in-up"
           data-aos-duration="1000"
-          className="title flex flex-col justify-center items-center gap-2"
+          className="title flex flex-col justify-center items-center gap-2 mt-32"
         >
           <div className="flex flex-row gap-10 mb-4 mt-7">
             <span className="bg-pureGray text-xl lg:text-3xl text-darkGray rounded-xl px-4 py-1 outline outline-pureGray outline-2 outline-offset-4 transition-all duration-500">

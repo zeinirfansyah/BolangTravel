@@ -61,10 +61,10 @@ export const Payment = () => {
     <section
       data-aos="zoom-out"
       id="hero"
-      className="bg-white transition-all duration-500 py-7"
+      className="bg-white transition-all duration-500"
     >
       <div data-aos="zoom-in-up" data-aos-duration="1000" className="max-w-7xl mx-auto">
-        <div className="flex flex-col gap-5 lg:gap-10 items-center px-6">
+        <div className="flex flex-col gap-5 lg:gap-10 items-center px-6 mt-32">
           <div className="title flex flex-col justify-center items-center gap-2">
             <div className="flex flex-row gap-10 mb-4 mt-7">
               <span className="bg-secondary text-xl lg:text-3xl text-white rounded-xl px-4 py-1 transition-all duration-500">
