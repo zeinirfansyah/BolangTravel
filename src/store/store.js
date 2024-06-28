@@ -18,7 +18,7 @@ const useStore = create(
 
     fetchProducts: async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/travel-packages/table/12&1");
+        const response = await axios.get("http://localhost:3000/api/travel-package/table/12&1");
         const data = response.data;
         const categories = new Set(data.data.rows.map((product) => product.category));
 
