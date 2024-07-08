@@ -10,6 +10,9 @@ import { Completed } from "./pages/bookingProgess/Completed";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ProtectedRoute from "./routes/ProtectedRoute";
+import DestinationList from "./pages/admin/destination/DestinationList";
+import AddDestination from "./pages/admin/destination/AddDestination";
+import UpdateDestination from "./pages/admin/destination/UpdateDestination";
 
 function App() {
   AOS.init();
@@ -40,6 +43,9 @@ function App() {
             />
         
           <Route path="/booking-selesai" element={<Completed />} />
+          <Route path="/destination" element={<DestinationList />} />
+          <Route path="/add-destination" element={<AddDestination />} />
+          <Route path="/update-destination" element={<UpdateDestination />} />
         </Routes>
       </Layout>
     </>
