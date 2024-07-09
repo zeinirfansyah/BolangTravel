@@ -24,14 +24,7 @@ function App() {
           <Route path="/tentang-kami" element={<About />} />
           <Route path="/paket-wisata" element={<TravelPackage />} />
           <Route path="/paket-wisata/:id" element={<PackageDetail />} />
-          <Route
-              path="/booking-progres"
-              element={
-                <ProtectedRoute redirectPath="/paket-wisata" requiredData={["date"]}>
-                  <BookingProgress />
-                </ProtectedRoute>
-              }
-            />
+          <Route path="/booking-progres/:id/:date" element={<BookingProgress />} />
           <Route
               path="/pembayaran"
               element={
