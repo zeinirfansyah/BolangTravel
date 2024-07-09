@@ -11,6 +11,9 @@ const DestinationList = () => {
     const handleUpdate = () => {
         navigate('/update-destination');
     };
+    const handleCancel = () => {
+        navigate('/update-destination');
+    };
     return (
         <>
             <section className="my-52">
@@ -19,10 +22,12 @@ const DestinationList = () => {
                         <h1 className="text-sm text-primary">
                             <span className="block font-bold text-dark text-4xl lg:text-5xl">Destination List</span>
                         </h1>
-                        <Button onClick={handleAdd} title={"Add Destination"} style={"rounded-lg py-2 px-3 text-sm bg-primary border-primary text-white hover:border-white hover:shadow-lg hover:opacity-95 transition duration-300 ease-in-out"}/>
+                        <div className="flex justify-start items-start">
+                            <Button onClick={handleAdd} title={"Add Destination"} style={"text-sm bg-primary border-primary text-white hover:border-white hover:shadow-lg hover:opacity-95 transition duration-300 ease-in-out"}/>
+                        </div>
                         <div className="relative overflow-x-auto">
-                            <table className="w-full text-sm text-left rtl:text-right text-gray-500 shadow-lg">
-                                <thead className="text-xs text-slate-800 uppercase bg-gray-100 text-center">
+                            <table className="w-full text-sm text-left rtl:text-right text-darkGray shadow-lg">
+                                <thead className="text-xs text-navy uppercase bg-lightGray text-center">
                                     <tr>
                                         <th scope="col" className="px-6 py-3">
                                             Title
@@ -63,8 +68,8 @@ const DestinationList = () => {
                                         </td>
                                         <td className="px-6 py-4">
                                             <div className="flex items-center justify-center gap-2">
-                                                <Button onClick={handleUpdate} title={"Update"} style={"rounded-lg py-2 px-3 text-sm bg-slate-200 hover:bg-primary border-slate-200 hover:border-primary text-slate-800 hover:text-white hover:shadow-lg hover:opacity-95 transition duration-300 ease-in-out"}/>
-                                                <a href="#" className="rounded-lg py-2 px-3 text-sm bg-primary hover:bg-pink border-slate-200 hover:border-pink text-white hover:text-white hover:shadow-lg hover:opacity-95 transition duration-300 ease-in-out">Delete</a>
+                                                <Button onClick={handleUpdate} title={"Update"} style={"text-sm bg-pureGray hover:bg-primary border-pureGray hover:border-primary text-navy hover:text-white hover:shadow-lg hover:opacity-95 transition duration-300 ease-in-out"}/>
+                                                <Button onClick={handleCancel} title={"Cancel"} style={"text-sm bg-primary hover:bg-pink border-primary hover:border-pink text-white hover:text-white hover:shadow-lg hover:opacity-95 transition duration-300 ease-in-out"}/>
                                             </div>
                                         </td>
                                     </tr>
@@ -86,8 +91,8 @@ const DestinationList = () => {
                                         </td>
                                         <td className="px-6 py-4">
                                             <div className="flex items-center justify-center gap-2">
-                                                <Button onClick={handleUpdate} title={"Update"} style={"rounded-lg py-2 px-3 text-sm bg-slate-200 hover:bg-primary border-slate-200 hover:border-primary text-slate-800 hover:text-white hover:shadow-lg hover:opacity-95 transition duration-300 ease-in-out"}/>
-                                                <a href="#" className="rounded-lg py-2 px-3 text-sm bg-primary hover:bg-pink border-slate-200 hover:border-pink text-white hover:text-white hover:shadow-lg hover:opacity-95 transition duration-300 ease-in-out">Delete</a>
+                                                <Button onClick={handleUpdate} title={"Update"} style={"text-sm bg-pureGray hover:bg-primary border-pureGray hover:border-primary text-navy hover:text-white hover:shadow-lg hover:opacity-95 transition duration-300 ease-in-out"}/>
+                                                <Button onClick={handleCancel} title={"Cancel"} style={"text-sm bg-primary hover:bg-pink border-primary hover:border-pink text-white hover:text-white hover:shadow-lg hover:opacity-95 transition duration-300 ease-in-out"}/>
                                             </div>
                                         </td>
                                     </tr>

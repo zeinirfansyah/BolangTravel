@@ -10,7 +10,7 @@ export default {
         lightGray: "#F5F6F8",  
         pureGray: "#E5E5E5",
         darkGray:"#B3B3B3",
-        textGray:"#8f8f8f",
+        textGray:"#8F8F8F",
         pink: "#FF498B"                                     
       }
     },

@@ -17,13 +17,13 @@ const AddDestination = () => {
             <div className="container mx-auto px-4 lg:max-w-7xl flex items-center justify-center">
                 <div className="grid gap-5">
                     <div className="font-semibold text-primary text-xs mb-2">
-                        <a href="/destination" className="hover:text-teal-700">Destination List</a>
+                        <a href="/destination" className="hover:text-primary">Destination List</a>
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 inline" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                         </svg>
-                        <span className="text-slate-800">Destination Information Form</span>
+                        <span className="text-slate-400">Destination Information Form</span>
                     </div>
-                    <h1 className="text-sm text-primary text-center dark:text-primary">
+                    <h1 className="text-sm text-primary text-center">
                         <span className="block font-bold text-dark text-4xl lg:text-5xl">Destination Information Form</span>
                     </h1>
                     <h2 className="text-slate-400 text-sm text-center">Please fill up the blank fields below</h2>
@@ -43,7 +43,7 @@ const AddDestination = () => {
                             </div>
                             <div className="mb-5">
                                 <label for="price" className="block mb-2 text-sm font-medium text-navy">Price</label>
-                                <input type="text" id="price" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Please type here ..." required />
+                                <input type="number" id="price" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Please type here ..." required />
                             </div>
                         </div>
                         <div className="text-left w-full">
@@ -53,7 +53,7 @@ const AddDestination = () => {
                             </div>
                             <div className="mb-5">
                                 <label for="duration" className="block mb-2 text-sm font-medium text-navy">Duration</label>
-                                <input type="text" id="duration" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Please type here ..." required />
+                                <input type="number" id="duration" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Please type here ..." required />
                             </div>
                             <div className="mb-5">
                                 <label for="thumbnail" className="block mb-2 text-sm font-medium text-navy">Thumbnail</label>
@@ -62,8 +62,8 @@ const AddDestination = () => {
                         </div>
                     </form>
                     <div className="grid items-center justify-center gap-4 mt-48">
-                        <Button onClick={handleSubmit} title={"Submit"} style={"rounded-lg py-2 px-3 text-sm bg-primary border-primary text-white hover:border-white hover:shadow-lg hover:opacity-95 transition duration-300 ease-in-out"}/>
-                        <Button onClick={handleCancel} title={"Cancel"} style={"rounded-lg py-3 px-20 text-sm bg-slate-200 hover:bg-pink border-slate-200 hover:border-pink text-slate-800 hover:text-white hover:shadow-lg hover:opacity-95 transition duration-300 ease-in-out"}/>
+                        <Button onClick={handleSubmit} title={"Submit"} style={"text-sm bg-primary border-primary text-white hover:border-white hover:shadow-lg hover:opacity-95 transition duration-300 ease-in-out"}/>
+                        <Button onClick={handleCancel} title={"Cancel"} style={"text-sm bg-pureGray hover:bg-pink border-pureGray hover:border-pink text-navy hover:text-white hover:shadow-lg hover:opacity-95 transition duration-300 ease-in-out"}/>
                     </div>
                 </div>
             </div>
