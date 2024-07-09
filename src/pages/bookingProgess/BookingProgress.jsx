@@ -1,21 +1,29 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Button } from "../../components/ui/Button";
 import { Input } from "../../components/ui/Input";
 import { Textarea } from "../../components/ui/Textarea";
 import useStore from "../../store/store";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const BookingProgress = () => {
-  const store = useStore();
-  const { bookingData, setBookingData } = store;
+  const { id, date } = useParams();
+  const { product, bookingData, setBookingData, fetchDetailProduct } = useStore(
+    (state) => state
+  );
   const navigate = useNavigate();
 
+  console.log(bookingData)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     address: "",
+    date: date,
   });
+
+  useEffect(() => {
+    fetchDetailProduct(id);
+  }, []);
 
   const handleChange = (event) => {
     setFormData({
@@ -48,7 +56,7 @@ export const BookingProgress = () => {
 
   const handleCancel = () => {
     navigate(`/`);
-    store.setBookingData(null);
+    setBookingData(null);
   };
 
   return (
@@ -85,24 +93,24 @@ export const BookingProgress = () => {
               className="flex flex-col gap-5 w-full lg:pe-20 pb-10 lg:pb-auto border-b-2 lg:border-b-0 lg:border-r-2 border-pureGray "
             >
               <img
-                src={`http://localhost:3000/${bookingData.thumbnail}`}
+                src={`http://localhost:3000/${product.thumbnail}`}
                 alt="bali"
                 className="rounded-lg lg:rounded-[30px] w-[40rem] h-[17.5rem] object-cover"
               />
               <div className="text-info flex flex-row justify-between items-center w-full">
                 <div className="title-info flex flex-col">
-                  <h1 className="text-xl lg:text-2xl">{bookingData.title}</h1>
+                  <h1 className="text-xl lg:text-2xl">{product.title}</h1>
                   <h1 className="text-l lg:text-xl text-darkGray">
-                    {bookingData.location} - {bookingData.duration} Days
+                    {product.location} - {product.duration} Days
                   </h1>
                   <h1 className="text-l lg:text-xl text-darkGray"></h1>
                   <h1 className="text-l lg:text-xl text-darkGray">
-                    tanggal booking: {bookingData.date}
+                    tanggal booking: {date}
                   </h1>
                 </div>
                 <div className="price-info">
                   <h1 className="text-xl lg:text-2xl text-secondary">
-                    {bookingData.price}
+                    {product.price}
                   </h1>
                 </div>
               </div>
