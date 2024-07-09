@@ -6,8 +6,7 @@ import { useEffect, useState } from "react";
 
 export const PackageDetail = () => {
   const { id } = useParams();
-  const store = useStore();
-  const product = store.product.data;
+  const { product, fetchDetailProduct, setBookingData } = useStore((state) => state);
 
   const navigate = useNavigate();
 
@@ -29,13 +28,14 @@ export const PackageDetail = () => {
       date: selectedDate,
     };
 
-    store.setBookingData(bookingData);
+    setBookingData(bookingData);
 
-    navigate(`/booking-progres`);
+    navigate(`/booking-progres/${id}/${selectedDate}`);
   };
 
+  console.log(product);
   useEffect(() => {
-    store.fetchDetailProduct(id);
+    fetchDetailProduct(id);
   }, []);
 
   return (
@@ -89,9 +89,7 @@ export const PackageDetail = () => {
               <div className="flex flex-col-reverse gap-6 lg:w-1/2">
                 {product?.rundowns.map((rundown) => (
                   <div key={rundown.id}>
-                    <h1 className="text-xl lg:text-xl">
-                      {rundown?.title}
-                    </h1>
+                    <h1 className="text-xl lg:text-xl">{rundown?.title}</h1>
                     <p className="text-sm lg:text-l text-textGray">
                       {rundown?.agenda}
                     </p>
