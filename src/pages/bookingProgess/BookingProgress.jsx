@@ -51,7 +51,7 @@ export const BookingProgress = () => {
     };
 
     setBookingData(updatedBookingData);
-    navigate(`/pembayaran`);
+    navigate(`/booking-progres/${id}/${date}/pembayaran`);
   };
 
   const handleCancel = () => {
