@@ -107,6 +107,7 @@ export const TravelPackage = () => {
                 value={selectedCategory}
                 onChange={handleSelectChange}
                 label="Category"
+                default_option="All Categories"
               />
             </div>
           </div>
