@@ -14,6 +14,7 @@ import DestinationList from "./pages/admin/destination/DestinationList";
 import AddDestination from "./pages/admin/destination/AddDestination";
 import UpdateDestination from "./pages/admin/destination/UpdateDestination";
 import { Register } from "./pages/auth/Register";
+import CreateDestinationsAndRundowns from "./pages/admin/formDestinationsAndRundowns/CreateDestinationsAndRundowns";
 
 function App() {
   AOS.init();
@@ -43,6 +44,7 @@ function App() {
           <Route path="/destination" element={<DestinationList />} />
           <Route path="/add-destination" element={<AddDestination />} />
           <Route path="/update-destination" element={<UpdateDestination />} />
+          <Route path="/create-destinations-and-rundowns" element={<CreateDestinationsAndRundowns />} />
         </Routes>
       </Layout>
     </>
