@@ -13,6 +13,7 @@ import ProtectedRoute from "./routes/ProtectedRoute";
 import DestinationList from "./pages/admin/destination/DestinationList";
 import AddDestination from "./pages/admin/destination/AddDestination";
 import UpdateDestination from "./pages/admin/destination/UpdateDestination";
+import { Register } from "./pages/auth/Register";
 
 function App() {
   AOS.init();
@@ -24,6 +25,9 @@ function App() {
           <Route path="/tentang-kami" element={<About />} />
           <Route path="/paket-wisata" element={<TravelPackage />} />
           <Route path="/paket-wisata/:id" element={<PackageDetail />} />
+          
+          <Route path="/register" element={<Register />} />
+          
           <Route path="/booking-progres/:id/:date" element={<BookingProgress />} />
           <Route
               path="/pembayaran"
@@ -34,8 +38,8 @@ function App() {
                 </ProtectedRoute>
               }
             />
-        
           <Route path="/booking-selesai" element={<Completed />} />
+          
           <Route path="/destination" element={<DestinationList />} />
           <Route path="/add-destination" element={<AddDestination />} />
           <Route path="/update-destination" element={<UpdateDestination />} />
