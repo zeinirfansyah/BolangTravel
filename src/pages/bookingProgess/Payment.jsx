@@ -52,10 +52,6 @@ export const Payment = () => {
     navigate(`/booking-selesai`); // Navigate to payment page
   };
 
-  const handleCancel = () => {
-    navigate('/booking-progres');
-  };
-
   console.log(bookingData);
   return (
     <section
@@ -145,12 +141,6 @@ export const Payment = () => {
                 title="Kirim"
                 style="bg-secondary text-white hover:bg-primary"
                 onClick={handleSubmit}
-              />
-
-              <Button
-                title="Batal"
-                style="bg-lightGray text-secondary border-2 border-secondary hover:border-pink hover:text-pink"
-                onClick={handleCancel}
               />
             </div>
           </form>
