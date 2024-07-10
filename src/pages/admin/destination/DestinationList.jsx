@@ -22,7 +22,7 @@ const DestinationList = () => {
                         <h1 className="text-sm text-primary">
                             <span className="block font-bold text-dark text-4xl lg:text-5xl">Destination List</span>
                         </h1>
-                        <div className="flex justify-start items-start">
+                        <div className="flex justify-start items-start w-[9rem] mt-10">
                             <Button onClick={handleAdd} title={"Add Destination"} style={"text-sm bg-primary border-primary text-white hover:border-white hover:shadow-lg hover:opacity-95 transition duration-300 ease-in-out"}/>
                         </div>
                         <div className="relative overflow-x-auto">

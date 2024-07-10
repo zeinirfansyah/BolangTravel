@@ -27,16 +27,16 @@ export const Header = () => {
             </div>
             <div className="flex items-end justify-end gap-2">
               <div className="flex sm:hidden">
-                <button class="block h-8 w-8 lg:h-6 lg:w-6 scale-[.80] lg:scale-110 rounded-full overflow-hidden border-2 border-white focus:outline-none order-1" onClick={menuAccount}
+                <button className="block h-8 w-8 lg:h-6 lg:w-6 scale-[.80] lg:scale-110 rounded-full overflow-hidden border-2 border-white focus:outline-none order-1" onClick={menuAccount}
               type="button">
                   <img className="h-full w-full object-cover" src="/src/assets/image/avatar.jpg" alt="Avatar" />
                 </button>
                 <div className={`py-2 w-40 bg-white text-sm font-medium rounded-lg absolute top-[5.6rem] right-[4rem] shadow-lg ${isMenuAccount ? "" : "hidden"} `}>
-                    <a href="/databooking" className="block px-4 py-2 text-slate-800 hover:bg-gray-200">Data Booking</a>
-                    <a href="/datapackage" className="block px-4 py-2 text-slate-800 hover:bg-gray-200">Data Package</a>
-                    <a href="/datadestination" class="block px-4 py-2 text-slate-800 hover:bg-gray-200">Data Destination</a>
+                    <Link to="/" className="block px-4 py-2 text-slate-800 hover:bg-gray-200">Data Booking</Link>
+                    <Link to="/" className="block px-4 py-2 text-slate-800 hover:bg-gray-200">Data Package</Link>
+                    <Link to="/destination" className="block px-4 py-2 text-slate-800 hover:bg-gray-200">Destination List</Link>
                     <hr className="my-2" />
-                    <a href="#" className="block px-4 py-2 text-slate-800 hover:bg-gray-200">Sign out</a>
+                    <Link to="#" className="block px-4 py-2 text-slate-800 hover:bg-gray-200">Sign out</Link>
                 </div>
               </div>
               <button
@@ -78,16 +78,16 @@ export const Header = () => {
             </li>
           </ul>
           <div className="hidden md:flex">
-            <button class="block h-8 w-8 lg:h-6 lg:w-6 scale-[.80] lg:scale-110 rounded-full overflow-hidden border-2 border-white focus:outline-none order-1" onClick={menuAccount}
+            <button className="block h-8 w-8 lg:h-6 lg:w-6 scale-[.80] lg:scale-110 rounded-full overflow-hidden border-2 border-white focus:outline-none order-1" onClick={menuAccount}
               type="button">
               <img className="h-full w-full object-cover" src="/src/assets/image/avatar.jpg" alt="Avatar" />
             </button>
             <div className={`py-2 w-40 bg-white text-sm font-medium rounded-lg absolute md:top-[5.5rem] md:right-[1rem] shadow-lg ${isMenuAccount ? "" : "hidden"} `}>
-                <a href="/databooking" className="block px-4 py-2 text-slate-800 hover:bg-gray-200">Data Booking</a>
-                <a href="/datapackage" className="block px-4 py-2 text-slate-800 hover:bg-gray-200">Data Package</a>
-                <a href="/datadestination" class="block px-4 py-2 text-slate-800 hover:bg-gray-200">Data Destination</a>
+                <Link to="/" className="block px-4 py-2 text-slate-800 hover:bg-gray-200">Data Booking</Link>
+                <Link to="/" className="block px-4 py-2 text-slate-800 hover:bg-gray-200">Data Package</Link>
+                <Link to="/destination" className="block px-4 py-2 text-slate-800 hover:bg-gray-200">Destination List</Link>
                 <hr className="my-2" />
-                <a href="#" className="block px-4 py-2 text-slate-800 hover:bg-gray-200">Sign out</a>
+                <Link to="#" className="block px-4 py-2 text-slate-800 hover:bg-gray-200">Sign out</Link>
             </div>
           </div>
         </nav>
