@@ -4,62 +4,73 @@ import mandiri_icon from "../../assets/icons/mandiri_bank.png";
 import { Button } from "../../components/ui/Button";
 import { Input } from "../../components/ui/Input";
 import useStore from "../../store/store";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
+import { useAuthStore } from "../../store/useAuthStore";
 
 export const Payment = () => {
-  const store = useStore();
-  const { bookingData, setBookingData, checkoutData, setCheckoutData } = store;
+  const { id } = useParams();
   const navigate = useNavigate();
+  const { token } = useAuthStore((state) => state);
+  const { bookingData } = useStore((state) => state);
+  const [error, setError] = useState(null);
+  const [bankName, setBankName] = useState("");
+  const [payerName, setPayerName] = useState("");
+  const [urlImage, setUrlImage] = useState("");
+  const [image, setImage] = useState("");
 
-  const [formData, setFormData] = useState({
-    name: "",
-    bank_name: "",
-    transfer_receipt: "",
-  });
+  const fileUpload = (e) => {
+    const file = e.target.files[0];
+    setUrlImage(URL.createObjectURL(file));
+    setImage(file);
 
-  const handleChange = (event) => {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value,
-    });
+    console.log("file", file);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    try {
+      const formData = new FormData();
 
-    if (
-      !formData.name ||
-      !formData.bank_name ||
-      !formData.transfer_receipt
-    ) {
-      alert("Mohon isi formulir pembayaran terlebih dahuluu.");
-      return;
+      formData.append("bank_name", bankName);
+      formData.append("payer_name", payerName);
+      formData.append("transfer_receipt", image);
+
+      console.log("form data", formData);
+
+      const response = await axios.put(
+        `http://localhost:3000/api/booking/complete-booking/${id}`,
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      console.log("response", response);
+      if (response.status === 200) {
+        alert("Payment Success!");
+        navigate(`/pembayaran/${id}/selesai`);
+      }
+    } catch (error) {
+      setError("All fields must be filled");
+      console.log(error);
     }
-
-    const checkout = {
-      ...bookingData,
-      ...formData,
-    }
-
-    const updateCheckoutData = {
-      ...checkoutData,
-      ...checkout
-    };
-
-    setCheckoutData(updateCheckoutData);
-    setBookingData([]);
-    setCheckoutData([]);
-    navigate(`/booking-selesai`); // Navigate to payment page
   };
 
-  console.log(bookingData);
+  console.log("bookingData", bookingData);
   return (
     <section
       data-aos="zoom-out"
       id="hero"
       className="bg-white transition-all duration-500"
     >
-      <div data-aos="zoom-in-up" data-aos-duration="1000" className="max-w-7xl mx-auto">
+      <div
+        data-aos="zoom-in-up"
+        data-aos-duration="1000"
+        className="max-w-7xl mx-auto"
+      >
         <div className="flex flex-col gap-5 lg:gap-10 items-center px-6 mt-32">
           <div className="title flex flex-col justify-center items-center gap-2">
             <div className="flex flex-row gap-10 mb-4 mt-7">
@@ -116,29 +127,55 @@ export const Payment = () => {
               >
                 <div className="flex flex-col gap-1">
                   <label htmlFor="name">Nama Pengirim</label>
-                  <Input name="name" placeholder="Masukan nama pengirim" value={checkoutData.name} onChange={handleChange}/>
+                  <Input
+                    name="name"
+                    placeholder="Masukan nama pengirim"
+                    value={payerName}
+                    onChange={(e) => setPayerName(e.target.value)}
+                  />
                 </div>
                 <div className="flex flex-col gap-1">
                   <label htmlFor="bank_name">Nama Bank</label>
-                  <Input name="bank_name" placeholder="Masukan nama bank" value={checkoutData.bank_name} onChange={handleChange}/>
-                </div>
-
-                <div className="flex flex-col gap-1">
-                  <label htmlFor="transfer_receipt">
-                    Upload Transfer Receipt
-                  </label>
                   <Input
-                    name="transfer_receipt"
-                    type="file"
-                    accept=".jpg, .jpeg, .png"
-                    value={checkoutData.transfer_receipt} onChange={handleChange}
+                    name="bank_name"
+                    placeholder="Masukan nama bank"
+                    value={bankName}
+                    onChange={(e) => setBankName(e.target.value)}
                   />
                 </div>
+
+                <div className="flex justify-between gap-1">
+                  <div>
+                    <label htmlFor="transfer_receipt">
+                      Upload Transfer Receipt
+                    </label>
+                    <Input
+                      name="transfer_receipt"
+                      type="file"
+                      accept=".jpg, .jpeg, .png"
+                      onChange={fileUpload}
+                    />
+                  </div>
+                  <div className="flex justify-center  w-1/2">
+                    {urlImage && (
+                      <img
+                        src={urlImage}
+                        alt=""
+                        className="w-[100px] h-[100px] object-cover border shadow-md outline-dashed outline-2 outline-offset-4 outline-pureGray"
+                      />
+                    )}
+                  </div>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <p className="text-red-500">{error}</p>
+                </div>
+
+                <div className="flex justify-center"></div>
               </div>
             </div>
-            <div className="flex flex-col justify-center items-center gap-3 w-full lg:w-1/4">
+            <div className="flex flex-col justify-center items-center gap-3 w-full lg:w-1/4 my-12">
               <Button
-                title="Kirim"
+                title="Submit"
                 style="bg-secondary text-white hover:bg-primary"
                 onClick={handleSubmit}
               />
