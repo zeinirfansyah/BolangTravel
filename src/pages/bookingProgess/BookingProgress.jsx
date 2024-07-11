@@ -1,54 +1,72 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Button } from "../../components/ui/Button";
-import { Input } from "../../components/ui/Input";
-import { Textarea } from "../../components/ui/Textarea";
 import useStore from "../../store/store";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { useAuthStore, useAuthenticatedUser } from "../../store/useAuthStore";
 
 export const BookingProgress = () => {
-  const store = useStore();
-  const { bookingData, setBookingData } = store;
+  const { id, date } = useParams();
+  const { product, bookingData, setBookingData, fetchDetailProduct } = useStore(
+    (state) => state
+  );
+  const { user, token } = useAuthStore((state) => state);
+  const { authenticatedUser } = useAuthenticatedUser((state) => state);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    address: "",
-  });
+  console.log(bookingData);
 
-  const handleChange = (event) => {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value,
-    });
-  };
+  useEffect(() => {
+    authenticatedUser(token);
+    console.log("token", token);
+  }, [token]);
 
-  const handleSubmit = (event) => {
+  useEffect(() => {
+    fetchDetailProduct(id);
+  }, []);
+
+  console.log(user);
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
-    if (
-      !formData.name ||
-      !formData.email ||
-      !formData.phone ||
-      !formData.address
-    ) {
-      alert("Mohon isi formulir informasi booking terlebih dahuluu.");
-      return;
-    }
 
     const updatedBookingData = {
       ...bookingData,
-      ...formData,
+      ...user,
     };
 
     setBookingData(updatedBookingData);
-    navigate(`/pembayaran`);
+    console.log(bookingData);
+
+    try {
+      const response = await axios.post(
+        `http://localhost:3000/api/booking?travel_package_id=${bookingData.productId}`,
+        {
+          date: bookingData.date,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      console.log("response: ", response);
+
+      if (response.status === 201) {
+        alert("Booking Success!");
+        navigate(`/pembayaran/${response.data.data.id}`);
+      }
+    } catch (error) {
+      setError(error?.response?.data?.message);
+      console.log(error);
+    }
   };
 
   const handleCancel = () => {
     navigate(`/`);
-    store.setBookingData(null);
+    setBookingData(null);
   };
 
   return (
@@ -85,24 +103,24 @@ export const BookingProgress = () => {
               className="flex flex-col gap-5 w-full lg:pe-20 pb-10 lg:pb-auto border-b-2 lg:border-b-0 lg:border-r-2 border-pureGray "
             >
               <img
-                src={`http://localhost:3000/${bookingData.thumbnail}`}
+                src={`http://localhost:3000/${product.thumbnail}`}
                 alt="bali"
                 className="rounded-lg lg:rounded-[30px] w-[40rem] h-[17.5rem] object-cover"
               />
               <div className="text-info flex flex-row justify-between items-center w-full">
                 <div className="title-info flex flex-col">
-                  <h1 className="text-xl lg:text-2xl">{bookingData.title}</h1>
+                  <h1 className="text-xl lg:text-2xl">{product.title}</h1>
                   <h1 className="text-l lg:text-xl text-darkGray">
-                    {bookingData.location} - {bookingData.duration} Days
+                    {product.location} - {product.duration} Days
                   </h1>
                   <h1 className="text-l lg:text-xl text-darkGray"></h1>
                   <h1 className="text-l lg:text-xl text-darkGray">
-                    tanggal booking: {bookingData.date}
+                    tanggal booking: {date}
                   </h1>
                 </div>
                 <div className="price-info">
                   <h1 className="text-xl lg:text-2xl text-secondary">
-                    {bookingData.price}
+                    {product.price}
                   </h1>
                 </div>
               </div>
@@ -113,51 +131,31 @@ export const BookingProgress = () => {
             >
               <div className="flex flex-col gap-1">
                 <label htmlFor="name">Nama Lengkap</label>
-                <Input
-                  name="name"
-                  placeholder="Masukkan nama anda"
-                  value={bookingData.name}
-                  onChange={handleChange}
-                />
+                {user.fullname}
               </div>
               <div className="flex flex-col gap-1">
                 <label htmlFor="email">Email</label>
-                <Input
-                  name="email"
-                  placeholder="Masukan email anda"
-                  value={bookingData.email}
-                  onChange={handleChange}
-                />
+                {user.email}
               </div>
               <div className="flex flex-col gap-1">
                 <label htmlFor="phone">Nomor Telepon</label>
-                <Input
-                  name="phone"
-                  placeholder="Masukan nomor telepon anda"
-                  value={bookingData.phone}
-                  onChange={handleChange}
-                />
+                {user.phone}
               </div>
               <div className="flex flex-col gap-2">
                 <label htmlFor="address">Alamat</label>
-                <Textarea
-                  name="address"
-                  placeholder="Masukan alamat anda"
-                  value={bookingData.address}
-                  onChange={handleChange}
-                />
+                {user.address}
               </div>
             </div>
           </div>
           <div className="flex flex-col justify-center items-center gap-3 w-full lg:w-1/4 my-5">
             <Button
-              title="Bayar"
+              title="Book Now"
               style="bg-secondary text-white hover:bg-primary"
               onClick={handleSubmit}
             />
 
             <Button
-              title="Batal"
+              title="Cancel"
               style="bg-lightGray text-secondary border-2 border-secondary hover:border-pink hover:text-pink"
               onClick={handleCancel}
             />

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
-const SelectOption = ({ options, value, onChange }) => {
-  const allCategoriesOption = { value: "", label: "All Categories" };
+const SelectOption = ({ options, value, onChange, default_option, default_value }) => {
+  const allCategoriesOption = { value: default_value, label: default_option };
 
   const combinedOptions = [allCategoriesOption, ...options];
 

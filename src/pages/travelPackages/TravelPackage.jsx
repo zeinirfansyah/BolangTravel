@@ -4,54 +4,64 @@ import useStore from "../../store/store";
 import FeaturedProduct from "../../components/FeaturedProduct";
 import { Input } from "../../components/ui/Input";
 import SelectOption from "../../components/ui/SelectOption";
+import axios from "axios";
 
 export const TravelPackage = () => {
-  const store = useStore();
-  const products = store.products?.data?.rows;
-  const categories = store.categories;
-  const selectedCategory = store.selectedCategory;
-  const setSelectedCategory = store.setSelectedCategory;
+  const {categories} = useStore((state) => state);
+  
+  const [displayedData, setDisplayedData] = useState(6);
+  const [page, setPage] = useState(1);
+  const [search, setSearch] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [productData, setProductData] = useState([]);
+  const [totalPage, setTotalPage] = useState(1);
 
-  const [searchTerm, setSearchTerm] = useState("");
-  const [filteredProducts, setFilteredProducts] = useState(products);
-
-  useEffect(() => {
-    store.fetchProducts();
-  }, []);
-
-  useEffect(() => {
-    const filterProducts = () => {
-      let filteredList = products;
-      if (selectedCategory) {
-        filteredList = filteredList.filter(
-          (product) => product?.category === selectedCategory
+  console.log("search", search);
+  const getProduct = async () => {
+    try {
+      if (selectedCategory === "all") {
+        const response = await axios.get(
+          `http://localhost:3000/api/travel-package/table/${displayedData}&${page}`
         );
-      }
 
-      if (searchTerm) {
-        filteredList = filteredList.filter((product) => {
-          const searchTextLower = searchTerm.toLowerCase();
-          return (
-            product?.title?.toLowerCase().includes(searchTextLower) ||
-            product?.location?.toLowerCase().includes(searchTextLower) ||
-            product?.destinations?.some((destination) =>
-              destination?.title?.toLowerCase().includes(searchTextLower)
-            )
-          );
-        });
-      }
-      setFilteredProducts(filteredList);
-    };
+        const data = response.data;
 
-    filterProducts();
-  }, [products, selectedCategory, searchTerm]);
+        console.log("response", response);
+
+        setProductData(data.data.rows);
+      } else {
+        const response = await axios.get(
+          `http://localhost:3000/api/travel-package/table/${displayedData}&${page}&${selectedCategory}`
+        );
+
+        const data = response.data;
+
+        console.log("response", response);
+
+        setProductData(data.data.rows);
+        setTotalPage(Math.ceil(data.data.count / displayedData));
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    getProduct();
+  }, [displayedData, page, totalPage, selectedCategory, search]);
+
+  const catalogProduct = productData.filter((product) => {
+    return (
+      product?.title?.toLowerCase().includes(search.toLowerCase()) ||
+      product?.location?.toLowerCase().includes(search.toLowerCase()) ||
+      product?.destinations?.some((destination) =>
+        destination?.title?.toLowerCase().includes(search.toLowerCase())
+      )
+    );
+  });
 
   const handleSelectChange = (event) => {
     setSelectedCategory(event.target.value);
-  };
-
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value);
   };
 
   const filterOptions = categories.map((category) => ({
@@ -82,7 +92,7 @@ export const TravelPackage = () => {
           >
             <h1 className="text-2xl font-bold">Rekomendasi</h1>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-              {products?.slice(0, 6).map((product) => (
+              {productData?.slice(0, 6).map((product) => (
                 <FeaturedProduct key={product.id} product={product} />
               ))}
             </div>
@@ -97,8 +107,8 @@ export const TravelPackage = () => {
                 name="search"
                 type="text"
                 placeholder="Cari Paket Wisatamu!"
-                onChange={handleSearchChange}
-                value={searchTerm}
+                onChange={(event) => setSearch(event.target.value)}
+                value={search}
               />
             </div>
             <div className="lg:w-1/4">
@@ -106,7 +116,8 @@ export const TravelPackage = () => {
                 options={filterOptions}
                 value={selectedCategory}
                 onChange={handleSelectChange}
-                label="Category"
+                default_option="All Categories"
+                default_value="all"
               />
             </div>
           </div>
@@ -115,10 +126,20 @@ export const TravelPackage = () => {
             data-aos-duration="1000"
             className="grid grid-cols-2 lg:grid-cols-4 gap-4"
           >
-            {filteredProducts?.map((product) => (
+            {catalogProduct?.map((product) => (
               <Product key={product.id} product={product} />
             ))}
           </div>
+        </div>
+        {/* pagination */}
+        <div className="flex items-center justify-between my-12">
+          <button onClick={() => setPage(page - 1)} disabled={page === 1} className="px-4 py-2 border rounded-xl shadow">
+            Previous
+          </button>
+          <span className="mx-4">Page: {page}</span>
+          <button onClick={() => setPage(page + 1)} disabled={page === 5} className="px-4 py-2 border rounded-xl shadow">
+            Next
+          </button>
         </div>
       </div>
     </>

@@ -6,8 +6,9 @@ import { useEffect, useState } from "react";
 
 export const PackageDetail = () => {
   const { id } = useParams();
-  const store = useStore();
-  const product = store.product.data;
+  const { product, fetchDetailProduct, setBookingData } = useStore(
+    (state) => state
+  );
 
   const navigate = useNavigate();
 
@@ -29,13 +30,14 @@ export const PackageDetail = () => {
       date: selectedDate,
     };
 
-    store.setBookingData(bookingData);
+    setBookingData(bookingData);
 
-    navigate(`/booking-progres`);
+    navigate(`/booking-progres/${id}/${selectedDate}`);
   };
 
+  console.log(product);
   useEffect(() => {
-    store.fetchDetailProduct(id);
+    fetchDetailProduct(id);
   }, []);
 
   return (
@@ -59,25 +61,32 @@ export const PackageDetail = () => {
             data-aos-duration="1000"
             className="flex flex-row gap-4"
           >
-            <img
-              src={`http://localhost:3000/${product?.destinations[0]?.thumbnail}`}
-              alt={product?.destinations[0]?.thumbnail}
-              data-size="auto"
-              className="lazyload lazyloaded rounded-xl object-cover w-2/3 max-h-[560px]"
-            />
+            {product && product?.destinations && (
+              <img
+                src={`http://localhost:3000/${product?.destinations[0]?.thumbnail}`}
+                alt={product?.destinations[0]?.thumbnail}
+                data-size="auto"
+                className="lazyload lazyloaded rounded-xl object-cover w-2/3 max-h-[560px]"
+              />
+            )}
             <div className="flex flex-col gap-4 max-h-[560px]">
-              <img
-                src={`http://localhost:3000/${product?.destinations[1]?.thumbnail}`}
-                data-size="auto"
-                alt={product?.destinations[1]?.thumbnail}
-                className="lazyload lazyloaded rounded-xl object-cover max-h-72"
-              />
-              <img
-                src={`http://localhost:3000/${product?.destinations[2]?.thumbnail}`}
-                data-size="auto"
-                alt={product?.destinations[2]?.thumbnail}
-                className="lazyload lazyloaded rounded-xl object-cover max-h-72"
-              />
+              {product && product?.destinations && (
+                <img
+                  src={`http://localhost:3000/${product?.destinations[1]?.thumbnail}`}
+                  data-size="auto"
+                  alt={product?.destinations[1]?.thumbnail}
+                  className="lazyload lazyloaded rounded-xl object-cover max-h-72"
+                />
+              )}
+
+              {product && product?.destinations && (
+                <img
+                  src={`http://localhost:3000/${product?.destinations[2]?.thumbnail}`}
+                  data-size="auto"
+                  alt={product?.destinations[2]?.thumbnail}
+                  className="lazyload lazyloaded rounded-xl object-cover max-h-72"
+                />
+              )}
             </div>
           </div>
           <div className="flex flex-col gap-12">
@@ -86,18 +95,18 @@ export const PackageDetail = () => {
               data-aos-duration="1000"
               className="flex flex-col lg:flex-row gap-7 justify-between py-7"
             >
-              <div className="flex flex-col-reverse gap-6 lg:w-1/2">
-                {product?.rundowns.map((rundown) => (
-                  <div key={rundown.id}>
-                    <h1 className="text-xl lg:text-xl">
-                      {rundown?.title}
-                    </h1>
-                    <p className="text-sm lg:text-l text-textGray">
-                      {rundown?.agenda}
-                    </p>
-                  </div>
-                ))}
-              </div>
+              {product && product?.destinations && (
+                <div className="flex flex-col-reverse gap-6 lg:w-1/2">
+                  {product?.rundowns.map((rundown) => (
+                    <div key={rundown.id}>
+                      <h1 className="text-xl lg:text-xl">{rundown?.title}</h1>
+                      <p className="text-sm lg:text-l text-textGray">
+                        {rundown?.agenda}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              )}
               <div className="flex flex-col gap-4 lg:w-1/3">
                 <div
                   className=" flex flex-col gap-2 w-full  lg:w-[24rem] shadow-md p-12 border rounded-2xl bg-white aos-init aos-animate"
@@ -132,13 +141,15 @@ export const PackageDetail = () => {
               className="hidden lg:flex flex-col gap-4 py-7"
             >
               <h1 className="text-xl font-semibold">Popular Destinations</h1>
-              <div className={`grid lg:grid-cols-4 gap-4`}>
-                {product?.destinations.slice(0, 4).map((destination) => (
-                  <div key={destination?.id}>
-                    <Destination destination={destination} />
-                  </div>
-                ))}
-              </div>
+              {product && product?.destinations && (
+                <div className={`grid lg:grid-cols-4 gap-4`}>
+                  {product?.destinations.slice(0, 4).map((destination) => (
+                    <div key={destination?.id}>
+                      <Destination destination={destination} />
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>

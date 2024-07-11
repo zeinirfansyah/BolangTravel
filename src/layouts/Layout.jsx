@@ -1,6 +1,7 @@
 import { PropTypes } from 'prop-types';
 import { useEffect } from "react";
 import { useLocation } from "react-router";
+import { Outlet } from "react-router-dom";
 
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
@@ -15,6 +16,7 @@ export const Layout = ({ children }) => {
     <>
       <Header />
       {children}
+      <Outlet />
       <Footer />
     </>
   );
