@@ -11,7 +11,7 @@ const initialState = {
   error: null,
 };
 
-const useAuthStore = create(
+export const useAuthStore = create(
   persist(
     (set) => ({
       ...initialState,
@@ -27,6 +27,8 @@ const useAuthStore = create(
 
         set({ token: response.data.data.token, user: userData, isAuthenticated: true, isLoading: false });
       },
+
+     
 
       logout: () => {
         localStorage.removeItem("token");
@@ -44,4 +46,20 @@ const useAuthStore = create(
   )
 );
 
-export default useAuthStore;
+export const useAuthenticatedUser = create(
+  (set) => (
+    {
+      ...initialState,
+      authenticatedUser: async (token) => {
+        const response = await axios.get("http://localhost:3000/api/account", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+    
+        set ({user: response.data.data})
+      },
+    }
+  )
+)
+
