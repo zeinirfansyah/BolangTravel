@@ -19,6 +19,8 @@ import AuthRoute from "./routes/AuthRoute";
 import Dashboard from "./pages/admin/Home/Dashboard";
 import CreateDestinationsAndRundowns from "./pages/admin/formDestinationsAndRundowns/CreateDestinationsAndRundowns";
 import { Suspense } from "react";
+import BookingHistory from "./pages/bookingHistory/BookingHistory";
+import BookingList from "./pages/admin/bookingList/BookingList";
 
 function App() {
   AOS.init();
@@ -35,13 +37,18 @@ function App() {
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
 
-            <Route
-              path="/booking-progres/:id/:date"
-              element={<AuthRoute role="customer" />}
-            >
+            <Route path="/booking-progres/:id/:date" element={<AuthRoute />}>
               <Route index element={<BookingProgress />} />
-              <Route path="pembayaran" element={<Payment />} />
+            </Route>
+
+            <Route path="/pembayaran/:id" element={<AuthRoute />}>
+              <Route index element={<Payment />} />
               <Route path="selesai" element={<Completed />} />
+            </Route>
+
+            <Route path="/account" element={<AuthRoute />}>
+              <Route index element={<BookingProgress />} />
+              <Route path="booking-history" element={<BookingHistory />} />
             </Route>
 
             <Route path="/admin" element={<AuthRoute role="admin" />}>
@@ -52,7 +59,15 @@ function App() {
                 path="update-destination"
                 element={<UpdateDestination />}
               />
-             <Route path="create-destinations-and-rundowns" element={<CreateDestinationsAndRundowns />} />
+              <Route
+                path="booking-list"
+                element={<BookingList />}
+              />
+
+              <Route
+                path="create-destinations-and-rundowns"
+                element={<CreateDestinationsAndRundowns />}
+              />
             </Route>
 
             <Route path="*" element={<NotFound />} />
