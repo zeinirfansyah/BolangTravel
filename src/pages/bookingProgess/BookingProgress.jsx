@@ -1,57 +1,67 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { Button } from "../../components/ui/Button";
-import { Input } from "../../components/ui/Input";
-import { Textarea } from "../../components/ui/Textarea";
 import useStore from "../../store/store";
 import { useEffect, useState } from "react";
+import axios from "axios";
+import { useAuthStore, useAuthenticatedUser } from "../../store/useAuthStore";
 
 export const BookingProgress = () => {
   const { id, date } = useParams();
   const { product, bookingData, setBookingData, fetchDetailProduct } = useStore(
     (state) => state
   );
+  const { user, token } = useAuthStore((state) => state);
+  const { authenticatedUser } = useAuthenticatedUser((state) => state);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  console.log(bookingData)
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    address: "",
-    date: date,
-  });
+  console.log(bookingData);
+
+  useEffect(() => {
+    authenticatedUser(token);
+    console.log("token", token);
+  }, [token]);
 
   useEffect(() => {
     fetchDetailProduct(id);
   }, []);
 
-  const handleChange = (event) => {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value,
-    });
-  };
+  console.log(user);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
-    if (
-      !formData.name ||
-      !formData.email ||
-      !formData.phone ||
-      !formData.address
-    ) {
-      alert("Mohon isi formulir informasi booking terlebih dahuluu.");
-      return;
-    }
 
     const updatedBookingData = {
       ...bookingData,
-      ...formData,
+      ...user,
     };
 
     setBookingData(updatedBookingData);
-    navigate(`/booking-progres/${id}/${date}/pembayaran`);
+    console.log(bookingData);
+
+    try {
+      const response = await axios.post(
+        `http://localhost:3000/api/booking?travel_package_id=${bookingData.productId}`,
+        {
+          date: bookingData.date,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      console.log("response: ", response);
+
+      if (response.status === 201) {
+        alert("Booking Success!");
+        navigate(`/pembayaran/${response.data.data.id}`);
+      }
+    } catch (error) {
+      setError(error?.response?.data?.message);
+      console.log(error);
+    }
   };
 
   const handleCancel = () => {
@@ -121,39 +131,19 @@ export const BookingProgress = () => {
             >
               <div className="flex flex-col gap-1">
                 <label htmlFor="name">Nama Lengkap</label>
-                <Input
-                  name="name"
-                  placeholder="Masukkan nama anda"
-                  value={bookingData.name}
-                  onChange={handleChange}
-                />
+                {user.fullname}
               </div>
               <div className="flex flex-col gap-1">
                 <label htmlFor="email">Email</label>
-                <Input
-                  name="email"
-                  placeholder="Masukan email anda"
-                  value={bookingData.email}
-                  onChange={handleChange}
-                />
+                {user.email}
               </div>
               <div className="flex flex-col gap-1">
                 <label htmlFor="phone">Nomor Telepon</label>
-                <Input
-                  name="phone"
-                  placeholder="Masukan nomor telepon anda"
-                  value={bookingData.phone}
-                  onChange={handleChange}
-                />
+                {user.phone}
               </div>
               <div className="flex flex-col gap-2">
                 <label htmlFor="address">Alamat</label>
-                <Textarea
-                  name="address"
-                  placeholder="Masukan alamat anda"
-                  value={bookingData.address}
-                  onChange={handleChange}
-                />
+                {user.address}
               </div>
             </div>
           </div>
