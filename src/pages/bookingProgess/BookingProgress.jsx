@@ -149,13 +149,13 @@ export const BookingProgress = () => {
           </div>
           <div className="flex flex-col justify-center items-center gap-3 w-full lg:w-1/4 my-5">
             <Button
-              title="Bayar"
+              title="Book Now"
               style="bg-secondary text-white hover:bg-primary"
               onClick={handleSubmit}
             />
 
             <Button
-              title="Batal"
+              title="Cancel"
               style="bg-lightGray text-secondary border-2 border-secondary hover:border-pink hover:text-pink"
               onClick={handleCancel}
             />
