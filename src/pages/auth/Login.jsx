@@ -3,7 +3,7 @@ import { Button } from "../../components/ui/Button";
 import { Input } from "../../components/ui/Input";
 import { useState } from "react";
 import Toast from "../../components/ui/Toast";
-import useAuthStore from "../../store/useAuthStore";
+import {useAuthStore} from "../../store/useAuthStore";
 
 export const Login = () => {
   const navigate = useNavigate();
