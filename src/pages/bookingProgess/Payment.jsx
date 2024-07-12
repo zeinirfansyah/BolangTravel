@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import bca_icon from "../../assets/icons/bca_bank.png";
 import mandiri_icon from "../../assets/icons/mandiri_bank.png";
 import { Button } from "../../components/ui/Button";
@@ -18,6 +18,30 @@ export const Payment = () => {
   const [payerName, setPayerName] = useState("");
   const [urlImage, setUrlImage] = useState("");
   const [image, setImage] = useState("");
+  const [bookingDetail, setBookingDetail] = useState({});
+
+  const getBookingDetail = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:3000/api/booking/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      const result = response.data;
+      setBookingDetail(result.data);
+
+      console.log("response", response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getBookingDetail();
+  }, []);
 
   const fileUpload = (e) => {
     const file = e.target.files[0];
@@ -54,17 +78,17 @@ export const Payment = () => {
         navigate(`/pembayaran/${id}/selesai`);
       }
     } catch (error) {
-      setError("All fields must be filled");
+      setError(error?.response?.data?.message);
       console.log(error);
     }
   };
 
-  console.log("bookingData", bookingData);
+  console.log("bookingDetail", bookingDetail);
   return (
-    <section
+    <div
       data-aos="zoom-out"
       id="hero"
-      className="bg-white transition-all duration-500"
+      className="bg-white transition-all duration-500 min-h-screen"
     >
       <div
         data-aos="zoom-in-up"
@@ -82,10 +106,10 @@ export const Payment = () => {
               </span>
             </div>
             <h1 className="text-2xl lg:text-3xl font-bold text-center">
-              Pembayaran
+              Payment
             </h1>
             <h2 className="text-l lg:text-xl text-center text-darkGray">
-              Silahkan lengkapi informasi pembayaran
+              Please complete your payment
             </h2>
           </div>
           <form
@@ -97,12 +121,12 @@ export const Payment = () => {
                 id="paymentInfo"
                 className="flex flex-col gap-5 w-full lg:pe-20 pb-10 lg:pb-auto border-b-2 lg:border-b-0 lg:border-r-2 border-pureGray"
               >
-                <h1 className="text-xl lg:text-2xl">Informasi Pembayaran</h1>
+                <h1 className="text-xl lg:text-2xl">Payment Information</h1>
                 <ul className="flex flex-col gap-2">
-                  <li>Paket Wisata : {bookingData.title}</li>
-                  <li>Harga : Rp. {bookingData.price}</li>
-                  <li>PPN : 11%</li>
-                  <li>Total : Rp. {Math.round(bookingData.price * 1.11)}</li>
+                  <li>Package name : {bookingDetail?.travel_packages?.title}</li>
+                  <li>Price : IDR {bookingDetail?.travel_packages?.price}</li>
+                  <li>Tax : 11%</li>
+                  <li>Total : IDR {Math.round(bookingDetail?.travel_packages?.price * 1.11)}</li>
                 </ul>
                 <div className="bank-card px-4 py-4 shadow flex flex-row gap-4 justify-between items-center">
                   <img src={bca_icon} alt="bank_bca" />
@@ -126,19 +150,19 @@ export const Payment = () => {
                 className="flex flex-col gap-5 w-full lg:ps-20"
               >
                 <div className="flex flex-col gap-1">
-                  <label htmlFor="name">Nama Pengirim</label>
+                  <label htmlFor="name">Payer Name</label>
                   <Input
                     name="name"
-                    placeholder="Masukan nama pengirim"
+                    placeholder="Input your name"
                     value={payerName}
                     onChange={(e) => setPayerName(e.target.value)}
                   />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <label htmlFor="bank_name">Nama Bank</label>
+                  <label htmlFor="bank_name">Bank Name</label>
                   <Input
                     name="bank_name"
-                    placeholder="Masukan nama bank"
+                    placeholder="Input your bank name"
                     value={bankName}
                     onChange={(e) => setBankName(e.target.value)}
                   />
@@ -147,7 +171,7 @@ export const Payment = () => {
                 <div className="flex justify-between gap-1">
                   <div>
                     <label htmlFor="transfer_receipt">
-                      Upload Transfer Receipt
+                      Transfer Receipt
                     </label>
                     <Input
                       name="transfer_receipt"
@@ -183,6 +207,6 @@ export const Payment = () => {
           </form>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
