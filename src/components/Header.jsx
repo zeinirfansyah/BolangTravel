@@ -78,7 +78,7 @@ export const Header = () => {
               {isAuthenticated ? (
                 <div className="flex md:items-center flex-col md:flex-row gap-4 md:gap-10">
                   <Link
-                    to="/profile"
+                    to="/account"
                     className="flex items-center gap-2 hover:text-secondary transition-all duration-500"
                   >
                     <User size={20} />

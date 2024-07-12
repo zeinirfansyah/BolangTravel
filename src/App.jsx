@@ -21,6 +21,7 @@ import CreateDestinationsAndRundowns from "./pages/admin/formDestinationsAndRund
 import { Suspense } from "react";
 import BookingHistory from "./pages/bookingHistory/BookingHistory";
 import BookingList from "./pages/admin/bookingList/BookingList";
+import Profile from "./pages/profile/Profile";
 
 function App() {
   AOS.init();
@@ -47,7 +48,7 @@ function App() {
             </Route>
 
             <Route path="/account" element={<AuthRoute />}>
-              <Route index element={<BookingProgress />} />
+              <Route index element={<Profile />} />
               <Route path="booking-history" element={<BookingHistory />} />
             </Route>
 
