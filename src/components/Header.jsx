@@ -1,11 +1,19 @@
-import { Camera, LogOut, PowerSquareIcon, User } from "lucide-react";
+import {
+  Camera,
+  History,
+  LayoutDashboard,
+  LogOut,
+  PowerSquareIcon,
+  User,
+} from "lucide-react";
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuthStore } from "../store/useAuthStore";
+import Dashboard from "../pages/admin/Home/Dashboard";
 
 export const Header = () => {
-  const { isAuthenticated, logout } = useAuthStore((state) => state);
+  const { isAuthenticated, user, logout } = useAuthStore((state) => state);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -77,6 +85,22 @@ export const Header = () => {
             <li className="my-5 md:my-0">
               {isAuthenticated ? (
                 <div className="flex md:items-center flex-col md:flex-row gap-4 md:gap-10">
+                  {user.role === "admin" && (
+                    <Link
+                      to="/admin"
+                      className="flex items-center gap-2 hover:text-secondary transition-all duration-500"
+                    >
+                      <LayoutDashboard size={20} />
+                      Dashboard
+                    </Link>
+                  )}
+                  <Link
+                    to="/account/booking-history"
+                    className="flex items-center gap-2 hover:text-secondary transition-all duration-500"
+                  >
+                    <History size={20} />
+                    History Booking
+                  </Link>
                   <Link
                     to="/account"
                     className="flex items-center gap-2 hover:text-secondary transition-all duration-500"
