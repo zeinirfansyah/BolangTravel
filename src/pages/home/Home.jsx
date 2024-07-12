@@ -33,11 +33,10 @@ export const Home = () => {
               className="flex flex-col gap-4 max-w-3xl"
             >
               <h1 className="text-2xl lg:text-4xl mt-10 font-bold text-center text-white">
-                Temukan Keajaiban Indonesia, Eksplorasi Tanah Air Terindah!
+              Discover the Wonders of Indonesia, Explore the Most Beautiful Homeland!
               </h1>
               <h4 className="text-xl font-light text-white">
-                Jelajahi pesona alam Indonesia yang memukau, dari hutan hujan
-                tropis yang lebat hingga puncak-puncak gunung yang menantang.
+              Unleash Your Inner Explorer: Dive into Indonesia&apos;s Untamed Beauty, from Rainforest Canopy Walks to Volcano Summit Treks
               </h4>
               <Button
                 onClick={() => {
@@ -57,7 +56,7 @@ export const Home = () => {
             data-aos-duration="1000"
             className="flex flex-col gap-4"
           >
-            <h1 className="text-2xl font-semibold">Rekomendasi</h1>
+            <h1 className="text-2xl font-semibold">Recommended</h1>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
               {products?.slice(0, 6).map((product) => (
                 <FeaturedProduct key={product?.id} product={product} />
@@ -69,7 +68,7 @@ export const Home = () => {
             data-aos-duration="1000"
             className="flex flex-col gap-4"
           >
-            <h1 className="text-2xl font-semibold">Paket Wisata Populer</h1>
+            <h1 className="text-2xl font-semibold">Popular Package</h1>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
               {products?.slice(0, 9).map((product) => (
                 <Product key={product?.id} product={product} />
@@ -112,7 +111,7 @@ export const Home = () => {
                 onClick={() => {
                   navigate("tentang-kami");
                 }}
-                title="Tentang Kami"
+                title="About Us"
                 style="bg-secondary hover:bg-primary text-white max-w-[240px]"
               />
             </div>
