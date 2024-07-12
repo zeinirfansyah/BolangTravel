@@ -42,7 +42,7 @@ export const PackageDetail = () => {
 
   return (
     <>
-      <div className="max-w-7xl mx-auto px-4 ">
+      <div className="max-w-7xl mx-auto px-4 min-h-screen">
         <div className="flex flex-col gap-4 mt-32">
           <div
             data-aos="zoom-in-up"
@@ -69,13 +69,13 @@ export const PackageDetail = () => {
                 className="lazyload lazyloaded rounded-xl object-cover w-2/3 max-h-[560px]"
               />
             )}
-            <div className="flex flex-col gap-4 max-h-[560px]">
+            <div className="flex flex-col items-center justify-center gap-4 max-h-[560px]">
               {product && product?.destinations && (
                 <img
                   src={`http://localhost:3000/${product?.destinations[1]?.thumbnail}`}
                   data-size="auto"
                   alt={product?.destinations[1]?.thumbnail}
-                  className="lazyload lazyloaded rounded-xl object-cover max-h-72"
+                  className="lazyload lazyloaded rounded-xl object-cover max-h-[260px]"
                 />
               )}
 
@@ -84,7 +84,7 @@ export const PackageDetail = () => {
                   src={`http://localhost:3000/${product?.destinations[2]?.thumbnail}`}
                   data-size="auto"
                   alt={product?.destinations[2]?.thumbnail}
-                  className="lazyload lazyloaded rounded-xl object-cover max-h-72"
+                  className="lazyload lazyloaded rounded-xl object-cover max-h-[260px]"
                 />
               )}
             </div>
