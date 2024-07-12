@@ -42,7 +42,7 @@ export const Home = () => {
                 onClick={() => {
                   navigate("paket-wisata");
                 }}
-                title="Pesan Sekarang"
+                title="Book Now"
                 style="bg-secondary hover:bg-primary text-white max-w-[240px] mx-auto"
               />
             </div>
