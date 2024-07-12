@@ -31,21 +31,20 @@ export const About = () => {
                   <span className="text-[#00C0E6]">Bolang</span>Travel.
                 </h1>
                 <p className="text-[#B0B0B0]">
-                  Jelajahi dunia bersama BolangTravel, destinasi utama Anda
-                  untuk petualangan tiada duanya. Mulai dari liburan pantai yang
-                  menenangkan hingga ekspedisi gunung yang mendebarkan, kami
-                  ahli dalam menciptakan pengalaman wisata yang dibuat khusus
-                  sesuai dengan preferensi Anda. Dengan tim ahli kami yang
-                  berdedikasi dan perhatian terhadap detail, setiap aspek
-                  perjalanan Anda direncanakan dengan teliti, membuat Anda bebas
-                  untuk menghimpun pengalaman luar biasa dalam penjelajahan.
+                  Explore the world with BolangTravel, your ultimate destination
+                  for adventures like no other. Starting from relaxing beach
+                  holidays to thrilling mountain expeditions, we are experts in
+                  creating tailor-made tourism experiences that suit your
+                  preferences. With our team of caring and detail-oriented
+                  experts, every aspect of your trip is meticulously planned,
+                  leaving you free to focus on having an amazing travel
+                  experience.
                 </p>
                 <p className="text-[#B0B0B0]">
-                  Di BolangTravel, kami menyesuaikan setiap perjalanan dengan
-                  keinginan unik Anda, menawarkan pendalaman budaya, aktivitas
-                  menegangkan, atau pelarian yang tenang. Biarkan kami menjadi
-                  mitra tepercaya Anda dalam menciptakan perjalanan tak
-                  terlupakan yang menginspirasi dan menyenangkan.
+                  At BolangTravel, we customize every trip to suit your unique
+                  desires, offering cultural immersion, thrilling activities, or
+                  a peaceful escape. Let us be your trusted partner in creating
+                  an unforgettable journey that is inspiring and fun.
                 </p>
                 <hr className="border-[#E5E5E5] w-full md:w-1/2 my-2" />
                 <div id="contact" className="flex flex-col">
