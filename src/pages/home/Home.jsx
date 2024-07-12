@@ -22,7 +22,7 @@ export const Home = () => {
     <>
       <div
         id="home"
-        className="overflow-hidden h-screen bg-cover bg-center bg-no-repeat text-center"
+        className="overflow-hidden min-h-screen bg-cover bg-center bg-no-repeat text-center"
         style={{ backgroundImage: `url(${image11})` }}
       >
         <div className="overflow-hidden h-screen bg-[#000] bg-opacity-70 ">
@@ -71,7 +71,7 @@ export const Home = () => {
           >
             <h1 className="text-2xl font-semibold">Paket Wisata Populer</h1>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              {products?.slice(0, 8).map((product) => (
+              {products?.slice(0, 9).map((product) => (
                 <Product key={product?.id} product={product} />
               ))}
             </div>
