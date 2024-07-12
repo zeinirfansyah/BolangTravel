@@ -22,23 +22,25 @@ export const Register = () => {
     event.preventDefault();
 
     try {
-        const response = await axios.post("http://localhost:3000/api/auth/register", {
-            fullname,
-            username,
-            phone,
-            address,
-            email,
-            password
-        })
-
-        if (response.status === 201) {
-            alert("Register Success!")
-            navigate("/login");
+      const response = await axios.post(
+        "http://localhost:3000/api/auth/register",
+        {
+          fullname,
+          username,
+          phone,
+          address,
+          email,
+          password,
         }
-        
+      );
+
+      if (response.status === 201) {
+        alert("Register Success!");
+        navigate("/login");
+      }
     } catch (error) {
-        setError(error?.response?.data?.message);
-      
+      setError(error?.response?.data?.message);
+
       console.log("Failed to register", error?.response?.data);
     }
   };
@@ -49,8 +51,9 @@ export const Register = () => {
         <div className="max-w-7xl mx-auto px-4">
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col px-4 py-1 lg:w-[60vw] shadow border-2 border-slate-200 rounded-lg mb-12"
+            className="flex flex-col px-4 py-1 lg:w-[60vw] border-2 border-slate-200 rounded-lg mb-12"
           >
+             {error && <Toast text={error} backgroundColor="bg-red-200" />}
             <div className="title flex flex-col justify-center items-center gap-2 my-12">
               <h1 className="text-2xl lg:text-3xl font-bold text-center">
                 Welcome to BolangTravel
@@ -129,7 +132,6 @@ export const Register = () => {
               </div>
             </div>
             <div className="flex flex-col gap-6 items-center my-12">
-              {error && <Toast text={error} backgroundColor="bg-red-200" />}
               <div className="w-full lg:w-[320px]">
                 <Button
                   title="Register"
