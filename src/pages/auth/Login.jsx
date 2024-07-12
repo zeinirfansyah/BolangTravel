@@ -3,7 +3,7 @@ import { Button } from "../../components/ui/Button";
 import { Input } from "../../components/ui/Input";
 import { useState } from "react";
 import Toast from "../../components/ui/Toast";
-import {useAuthStore} from "../../store/useAuthStore";
+import { useAuthStore } from "../../store/useAuthStore";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -43,8 +43,9 @@ export const Login = () => {
         <div className="max-w-7xl mx-auto px-4">
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col px-4 py-1 lg:w-[60vw] shadow border-2 border-slate-200 rounded-lg mb-12"
+            className="flex flex-col px-4 py-1 lg:w-[60vw] border-2 border-slate-200 rounded-lg mb-12"
           >
+            {error && <Toast text={error} backgroundColor="bg-red-200" />}
             <div className="title flex flex-col justify-center items-center gap-2 my-12">
               <h1 className="text-2xl lg:text-3xl font-bold text-center">
                 Welcome to BolangTravel
@@ -53,10 +54,10 @@ export const Login = () => {
                 Fill the registration from below!
               </p>
             </div>
-            <div className="flex flex-col lg:flex-row gap-5 lg:gap-0">
+            <div className="flex flex-col justify-center lg:flex-row gap-5 lg:gap-0">
               <div
                 id="bookingInfo"
-                className="flex flex-col gap-5 w-full lg:ps-20 px-4 py-6 pb-10 lg:pb-auto border-b-2 lg:border-b-0 lg:border-s-2 border-pureGray "
+                className="flex flex-col max-w-2xl gap-5 w-full px-4 py-6 pb-10 lg:pb-auto  border-pureGray "
               >
                 <div className="flex flex-col gap-1">
                   <label htmlFor="name">Username</label>
@@ -80,8 +81,7 @@ export const Login = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-6 items-center my-12">
-              {error && <Toast text={error} backgroundColor="bg-red-200" />}
+            <div className="flex flex-col gap-6 items-center mb-12">
               <div className="w-full lg:w-[320px]">
                 <Button
                   title="Login"
