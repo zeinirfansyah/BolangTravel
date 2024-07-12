@@ -71,7 +71,7 @@ export const BookingProgress = () => {
 
   return (
     <>
-      <div className="flex flex-col gap-5 lg:gap-10 items-center px-6">
+      <div className="flex flex-col gap-5 lg:gap-10 items-center px-6 min-h-screen">
         <div
           data-aos="zoom-in-up"
           data-aos-duration="1000"
@@ -86,10 +86,10 @@ export const BookingProgress = () => {
             </span>
           </div>
           <h1 className="text-2xl lg:text-3xl font-bold text-center">
-            Informasi Booking
+            Booking Information
           </h1>
           <h2 className="text-l lg:text-xl text-center text-darkGray">
-            Silahkan lengkapi informasi booking anda untuk melanjutkan
+            Please fill out the information below
           </h2>
         </div>
         <div
@@ -115,7 +115,7 @@ export const BookingProgress = () => {
                   </h1>
                   <h1 className="text-l lg:text-xl text-darkGray"></h1>
                   <h1 className="text-l lg:text-xl text-darkGray">
-                    tanggal booking: {date}
+                    Date: {date}
                   </h1>
                 </div>
                 <div className="price-info">
@@ -129,21 +129,21 @@ export const BookingProgress = () => {
               id="bookingForm"
               className="flex flex-col gap-5 w-full lg:ps-20"
             >
-              <div className="flex flex-col gap-1">
-                <label htmlFor="name">Nama Lengkap</label>
-                {user.fullname}
+              <div className="flex flex-col gap-3">
+                <label htmlFor="name">Full Name</label>
+                <p className="outline-dashed outline-gray-300 text-gray-600 outline-2 bg-white rounded-lg p-4 w-full focus:outline-secondary focus:ring-0 focus:bg-white transition-all duration-500">{user?.fullname}</p>
               </div>
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-3">
                 <label htmlFor="email">Email</label>
-                {user.email}
+                <p className="outline-dashed outline-gray-300 text-gray-600 outline-2 bg-white rounded-lg p-4 w-full focus:outline-secondary focus:ring-0 focus:bg-white transition-all duration-500">{user?.email}</p>
               </div>
-              <div className="flex flex-col gap-1">
-                <label htmlFor="phone">Nomor Telepon</label>
-                {user.phone}
+              <div className="flex flex-col gap-3">
+                <label htmlFor="phone">Phone Number</label>
+                <p className="outline-dashed outline-gray-300 text-gray-600 outline-2 bg-white rounded-lg p-4 w-full focus:outline-secondary focus:ring-0 focus:bg-white transition-all duration-500">{user?.phone}</p>
               </div>
-              <div className="flex flex-col gap-2">
-                <label htmlFor="address">Alamat</label>
-                {user.address}
+              <div className="flex flex-col gap-3">
+                <label htmlFor="address">Address</label>
+                <p className="outline-dashed outline-gray-300 text-gray-600 outline-2 bg-white rounded-lg p-4 w-full focus:outline-secondary focus:ring-0 focus:bg-white transition-all duration-500">{user?.address}</p>
               </div>
             </div>
           </div>
