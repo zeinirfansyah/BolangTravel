@@ -100,7 +100,7 @@ const BookingHistory = () => {
                       key={history?.id}
                       className="border-b-2 lg:border-none px-4 py-4 lg:py-0"
                     >
-                      <div className="hidden lg:flex justify-center my-8 outline-dashed outline-2 outline-primary outline-offset-8">
+                      <div className="flex justify-center my-8 outline-dashed outline-2 outline-primary outline-offset-8">
                         <img
                           src={`http://localhost:3000/${history?.travel_packages?.thumbnail}`}
                           alt={history?.travel_packages?.title}
