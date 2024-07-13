@@ -63,7 +63,7 @@ export const Login = () => {
                   <label htmlFor="name">Username</label>
                   <Input
                     name="name"
-                    placeholder="Masukkan username akun anda"
+                    placeholder="Input your username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                   />
@@ -74,7 +74,7 @@ export const Login = () => {
                   <Input
                     name="address"
                     type="password"
-                    placeholder="Masukan password anda"
+                    placeholder="Input your password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />

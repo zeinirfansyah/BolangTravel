@@ -65,7 +65,7 @@ export const Header = () => {
                   to="/paket-wisata"
                   className="active hover:text-secondary transition-all duration-500"
                 >
-                  Paket Wisata
+                  Travel Package
                 </Link>
               </li>
               <li className="my-5 md:my-0">
@@ -73,7 +73,7 @@ export const Header = () => {
                   to="/tentang-kami"
                   className="hover:text-secondary transition-all duration-500"
                 >
-                  Tentang Kami
+                  About Us
                 </Link>
               </li>
             </ul>

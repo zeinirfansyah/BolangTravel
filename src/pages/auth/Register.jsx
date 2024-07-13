@@ -40,6 +40,7 @@ export const Register = () => {
       }
     } catch (error) {
       setError(error?.response?.data?.message);
+      navigate("/register/#error");
 
       console.log("Failed to register", error?.response?.data);
     }
@@ -53,7 +54,9 @@ export const Register = () => {
             onSubmit={handleSubmit}
             className="flex flex-col px-4 py-1 lg:w-[60vw] border-2 border-slate-200 rounded-lg mb-12"
           >
-             {error && <Toast text={error} backgroundColor="bg-red-200" />}
+            <div id="error">
+              {error && <Toast text={error} backgroundColor="bg-red-200" />}
+            </div>
             <div className="title flex flex-col justify-center items-center gap-2 my-12">
               <h1 className="text-2xl lg:text-3xl font-bold text-center">
                 Welcome to BolangTravel
@@ -68,29 +71,29 @@ export const Register = () => {
                 className="flex flex-col gap-5 w-full lg:pe-20 px-4 py-6 "
               >
                 <div className="flex flex-col gap-1">
-                  <label htmlFor="name">Nama Lengkap</label>
+                  <label htmlFor="name">Full Name</label>
                   <Input
                     name="name"
-                    placeholder="Masukkan nama anda"
+                    placeholder="Input your fullname"
                     value={fullname}
                     onChange={(e) => setFullname(e.target.value)}
                   />
                 </div>
                 <div className="flex flex-col gap-1">
-                  <label htmlFor="phone">Nomor Telepon</label>
+                  <label htmlFor="phone">Phone Number</label>
                   <Input
                     name="phone"
-                    placeholder="Masukan nomor telepon anda"
+                    placeholder="Input your phone number"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                   />
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="address">Alamat</label>
+                  <label htmlFor="address">Address</label>
                   <Textarea
                     name="address"
-                    placeholder="Masukan alamat anda"
+                    placeholder="Input your address"
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
                   />

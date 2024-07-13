@@ -33,6 +33,7 @@ export const useAuthStore = create(
       logout: () => {
         set({
           token: null,
+          user: null,
           isAuthenticated: false,
           isLoading: false,
         });
