@@ -8,11 +8,8 @@ The application is designed to facilitate travel bookings, itinerary planning, a
 - [Anugrah Prastyo](https://github.com/anugrahp13)
 - [Ilham Muhammad Raffi](https://github.com/ilhamraffi)
 - [M. Naufan Winggar Rahman ](https://github.com/naufanwr)
-- [Josua Iwanda](https://github.com/Josua174)
 
 
-### Team Buddy Frontend
+### Team Buddy
 - [Hadis](https://github.com/itshadis)
-
-### Demo (Frontend)
-<a href="https://tugasakhiraplikasiwisata.tech/">https://tugasakhiraplikasiwisata.tech/</a>
+- [Arafa](https://github.com/)
